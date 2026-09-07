@@ -21,7 +21,7 @@ ELEVEN_KEYS = [
     "sk_f7e71cb386fef801650e0c702530ba709faf060fe29d923e",
     "sk_707459da51dfde90925e5e3ccbb78c3f39b03444a0bb03a8"
 ]
-VOICE_ID = "htFfPSZGJwjBv1CL0aMD" # Antonio (Calido, sacerdote joven)
+VOICE_ID = "k0cKCpdFDYiojW6PwPrO"  # DON MARIO (ex Jorge). Roster: ALEJANDRO 5z6tF6eAwkAluMyjDFJJ · DANIEL YVKER NWJYfWwtJp5Ud8GCYoZB
 
 def sintetizar_voz(texto, output_path):
     print("[AUTONOMO] 1. Sintetizando voz con ElevenLabs...")

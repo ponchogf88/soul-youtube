@@ -1,0 +1,35 @@
+{
+  "locked_at": "2026-09-07",
+  "timezone": "America/Monterrey",
+  "default": "DON_MARIO",
+  "roster": [
+    {
+      "stage_name": "DON MARIO",
+      "source_library": "Jorge",
+      "voice_id": "k0cKCpdFDYiojW6PwPrO",
+      "role": "lead_all_channels",
+      "sample": "DON_MARIO.mp3",
+      "speed": 0.96,
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "stage_name": "ALEJANDRO",
+      "source_library": "Alejo",
+      "voice_id": "5z6tF6eAwkAluMyjDFJJ",
+      "role": "intimate_breath",
+      "sample": "ALEJANDRO.mp3",
+      "speed": 0.96,
+      "model": "eleven_multilingual_v2"
+    },
+    {
+      "stage_name": "DANIEL YVKER",
+      "source_library": "Daniel Yvker",
+      "voice_id": "NWJYfWwtJp5Ud8GCYoZB",
+      "role": "meditative",
+      "sample": "DANIEL_YVKER.mp3",
+      "speed": 0.96,
+      "model": "eleven_multilingual_v2"
+    }
+  ],
+  "rejected": ["Cristina Campos", "Sarah", "Paco", "Diego", "Antonio (no default)"]
+}
