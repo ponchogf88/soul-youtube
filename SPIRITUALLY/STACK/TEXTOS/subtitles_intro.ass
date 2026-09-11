@@ -1,0 +1,21 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: TitleBadge,Arial,42,&H0000D7FF,&H00FFFFFF,&H00000000,&H90000000,-1,0,0,0,100,100,1,0,1,3,2,8,60,60,180,1
+Style: SubtitleText,Helvetica Neue,56,&H00FFFFFF,&H0000D7FF,&H000A0A0A,&HAA000000,-1,0,0,0,100,100,0,0,1,4.0,2.0,2,80,80,380,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.50,0:00:28.50,TitleBadge,,0,0,0,,{\b1}ETERNALLY GRATEFUL{\b0} • Daily Prayers
+Dialogue: 1,0:00:00.50,0:00:03.80,SubtitleText,,0,0,0,,Hey... take a deep breath with me for a second.
+Dialogue: 1,0:00:03.90,0:00:07.50,SubtitleText,,0,0,0,,Look, I know you've been carrying something heavy.
+Dialogue: 1,0:00:07.60,0:00:11.20,SubtitleText,,0,0,0,,We all make mistakes. We all stumble and fall short.
+Dialogue: 1,0:00:11.30,0:00:16.00,SubtitleText,,0,0,0,,But remember: your mistakes will {\c&H0000D7FF&}\1{\c&H00FFFFFF&} be bigger than {\c&H0000D7FF&}\1{\c&H00FFFFFF&}'s {\c&H0000D7FF&}\1{\c&H00FFFFFF&}.
+Dialogue: 1,0:00:16.10,0:00:20.50,SubtitleText,,0,0,0,,No matter what storm you're walking through right now...
+Dialogue: 1,0:00:20.60,0:00:24.50,SubtitleText,,0,0,0,,{\c&H0000D7FF&}\1{\c&H00FFFFFF&} is right beside you. He {\c&H0000D7FF&}\1{\c&H00FFFFFF&} you, and He will {\c&H0000D7FF&}\1{\c&H00FFFFFF&} let you go.
+Dialogue: 1,0:00:24.60,0:00:28.80,SubtitleText,,0,0,0,,Welcome to {\c&H0000D7FF&}\1{\c&H00FFFFFF&}. Type {\c&H0000D7FF&}\1{\c&H00FFFFFF&}, and let's walk together.

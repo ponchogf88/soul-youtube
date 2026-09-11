@@ -1,7 +1,30 @@
+# OS Metadata
 .DS_Store
+Thumbs.db
+
+# Secrets & Environment
+.env*
+apis*.txt
+*.key
+*.pem
+
+# Nested Sub-repositories
+FACELESS_STREAMING_24_7_YOUTUBE_TIKTOK/
+
+# Media files & heavy binaries
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.wav
+*.aac
+*.m4a
+*.mp3
 *.zip
+*.tar*
+
+# Dependencies & caches
 node_modules/
 __pycache__/
 *.pyc
-apis.txt
-.env
+.system_generated/

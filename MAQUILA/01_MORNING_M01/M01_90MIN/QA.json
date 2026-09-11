@@ -1,0 +1,114 @@
+{
+  "voice": "DON MARIO",
+  "speech_seconds": 1198.89,
+  "gap_seconds": 189.53,
+  "stay_seconds": 580,
+  "target": 5400,
+  "audio": "/Users/imac/Desktop/Projects/YOUTUBE CHANNEL/MAQUILA/01_MORNING_M01/M01_90MIN/LOCUCION_M01_DON_MARIO_90.m4a",
+  "video": "/Users/imac/Desktop/Projects/YOUTUBE CHANNEL/MAQUILA/01_MORNING_M01/M01_90MIN/VIDEO_M01_90MIN.mp4",
+  "audio_duration": 5400.0,
+  "video_duration": 5400.0,
+  "cycles": [
+    {
+      "id": "C01",
+      "seconds": 75.7,
+      "chars": 973
+    },
+    {
+      "id": "C02",
+      "seconds": 68.36,
+      "chars": 937
+    },
+    {
+      "id": "C03",
+      "seconds": 75.09,
+      "chars": 972
+    },
+    {
+      "id": "C04",
+      "seconds": 74.86,
+      "chars": 1063
+    },
+    {
+      "id": "C05",
+      "seconds": 80.25,
+      "chars": 1044
+    },
+    {
+      "id": "C06",
+      "seconds": 78.67,
+      "chars": 1010
+    },
+    {
+      "id": "C07",
+      "seconds": 58.79,
+      "chars": 775
+    },
+    {
+      "id": "C08",
+      "seconds": 58.33,
+      "chars": 700
+    },
+    {
+      "id": "C09",
+      "seconds": 58.93,
+      "chars": 749
+    },
+    {
+      "id": "C10",
+      "seconds": 61.53,
+      "chars": 784
+    },
+    {
+      "id": "C11",
+      "seconds": 55.17,
+      "chars": 709
+    },
+    {
+      "id": "C12",
+      "seconds": 52.71,
+      "chars": 679
+    },
+    {
+      "id": "C13",
+      "seconds": 49.46,
+      "chars": 667
+    },
+    {
+      "id": "C14",
+      "seconds": 52.34,
+      "chars": 694
+    },
+    {
+      "id": "C15",
+      "seconds": 51.18,
+      "chars": 643
+    },
+    {
+      "id": "C16",
+      "seconds": 57.54,
+      "chars": 733
+    },
+    {
+      "id": "C17",
+      "seconds": 51.87,
+      "chars": 665
+    },
+    {
+      "id": "C18",
+      "seconds": 41.75,
+      "chars": 523
+    },
+    {
+      "id": "C19",
+      "seconds": 44.12,
+      "chars": 562
+    },
+    {
+      "id": "C20",
+      "seconds": 52.24,
+      "chars": 675
+    }
+  ],
+  "pass_90": true
+}

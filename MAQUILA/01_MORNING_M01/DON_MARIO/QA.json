@@ -1,0 +1,24 @@
+{
+  "voice": "DON MARIO",
+  "voice_id": "k0cKCpdFDYiojW6PwPrO",
+  "master": "/Users/imac/Desktop/Projects/YOUTUBE CHANNEL/MAQUILA/01_MORNING_M01/LOCUCION_M01_DON_MARIO.mp3",
+  "duration_seconds": 637.05,
+  "cycles": [
+    "CYCLE_01\t78.11s\t973c",
+    "CYCLE_02\t79.74s\t1078c",
+    "CYCLE_03\t88.38s\t1131c",
+    "CYCLE_04\t88.56s\t1329c",
+    "CYCLE_05\t86.33s\t1203c",
+    "CYCLE_06\t87.77s\t1100c",
+    "CYCLE_07\t87.72s\t1155c",
+    "CIERRE\t26.98s\t343c"
+  ],
+  "bytes": 10035174,
+  "target": "14:30–15:30 plus 8s atmosphere",
+  "pass_duration": false,
+  "pass_file": true,
+  "pass_playable": true,
+  "pass_duration_15min_gate": false,
+  "note": "DON MARIO a speed 0.96 habla ~152 WPM. Audio real manda: 10:37. No bajar speed (veto Paco). Para 15 min hay que alargar texto, no arrastrar sílabas.",
+  "master_ok_for_next": true
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>SOUL napkin — dayparts + scene pool</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap");
+  :root {
+    --ink: #1c2430;
+    --red: #c23b2a;
+    --blue: #2a4d7a;
+    --gold: #c4922a;
+    --night: #1a2744;
+    --paper: #f4ead2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #3a3228; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .napkin {
+    width: 1600px;
+    height: 1000px;
+    background:
+      radial-gradient(ellipse at 12% 8%, rgba(255,255,255,.35), transparent 40%),
+      radial-gradient(ellipse at 88% 92%, rgba(180,140,80,.18), transparent 42%),
+      repeating-linear-gradient(92deg, transparent 0 28px, rgba(180,150,110,.07) 28px 29px),
+      var(--paper);
+    box-shadow: 0 18px 50px rgba(0,0,0,.45);
+    position: relative;
+    overflow: hidden;
+    padding: 42px 48px 36px;
+    font-family: "Patrick Hand", "Caveat", "Bradley Hand", cursive;
+    color: var(--ink);
+  }
+  .napkin:before {
+    content: "";
+    position: absolute; inset: 18px;
+    border: 2px dashed rgba(40,40,40,.18);
+    pointer-events: none;
+  }
+  h1 {
+    font-family: Caveat, cursive;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: .95;
+    transform: rotate(-1.2deg);
+    margin-bottom: 4px;
+  }
+  .sub {
+    font-size: 24px;
+    color: var(--red);
+    transform: rotate(-0.8deg);
+    margin-bottom: 22px;
+    max-width: 1100px;
+  }
+  .rule {
+    display: inline-block;
+    border-bottom: 3px solid var(--red);
+    transform: rotate(-1deg);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1.15fr 1.15fr .95fr;
+    gap: 18px;
+    height: 620px;
+  }
+  .col {
+    border: 2.5px solid var(--ink);
+    border-radius: 8px 18px 10px 16px / 16px 8px 18px 10px;
+    padding: 16px 16px 12px;
+    position: relative;
+    background: rgba(255,255,255,.18);
+  }
+  .col.am { box-shadow: inset 0 0 0 3px rgba(196,146,42,.25); }
+  .col.gold { box-shadow: inset 0 0 0 3px rgba(194,59,42,.2); }
+  .col.pm { background: rgba(26,39,68,.08); box-shadow: inset 0 0 0 3px rgba(42,77,122,.28); }
+  .col.lock {
+    background: rgba(194,59,42,.06);
+    transform: rotate(1.1deg);
+  }
+  .tag {
+    display: inline-block;
+    font-size: 18px;
+    letter-spacing: .04em;
+    border: 2px solid currentColor;
+    padding: 1px 10px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .am .tag { color: var(--gold); }
+  .gold .tag { color: var(--red); }
+  .pm .tag { color: var(--blue); }
+  .lock .tag { color: var(--red); }
+  h2 {
+    font-family: Caveat, cursive;
+    font-size: 34px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .when { font-size: 20px; opacity: .75; margin-bottom: 10px; }
+  ul { list-style: none; }
+  li {
+    font-size: 22px;
+    line-height: 1.25;
+    padding: 5px 0 5px 22px;
+    position: relative;
+  }
+  li:before {
+    content: "○";
+    position: absolute;
+    left: 0;
+    top: 4px;
+  }
+  .blur {
+    font-size: 20px;
+    font-style: italic;
+    margin: 8px 0 10px;
+    padding: 6px 8px;
+    border-left: 4px solid var(--ink);
+    opacity: .85;
+  }
+  .note {
+    font-size: 19px;
+    margin-top: 8px;
+  }
+  .lock h2 { color: var(--red); }
+  .lock li:before { content: "✓"; }
+  .bottom {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .formats {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    border: 2px solid var(--ink);
+    padding: 6px 14px;
+    font-size: 22px;
+    border-radius: 6px 14px 8px 12px;
+    background: rgba(255,255,255,.35);
+  }
+  .arrow {
+    font-size: 22px;
+    margin: 10px 0 0;
+  }
+  .stamp {
+    position: absolute;
+    right: 54px;
+    top: 36px;
+    width: 132px;
+    height: 132px;
+    border: 6px solid var(--red);
+    border-radius: 50%;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.05;
+    transform: rotate(12deg);
+    opacity: .85;
+    font-family: Caveat, cursive;
+    font-weight: 700;
+    padding: 12px;
+  }
+  .coffee {
+    position: absolute;
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(120,70,30,.18), transparent 70%);
+    right: 210px; top: 70px;
+    transform: rotate(20deg);
+  }
+  .scribble {
+    position: absolute;
+    left: 48px; bottom: 22px;
+    font-size: 20px;
+    opacity: .7;
+    transform: rotate(-1deg);
+  }
+</style>
+</head>
+<body>
+  <div class="napkin">
+    <div class="coffee"></div>
+    <div class="stamp">AGENT<br>PICKS<br>never<br>invents</div>
+    <h1>SOUL chrome — 3 hours, one factory</h1>
+    <p class="sub">Morning is often <span class="rule">blur → focus</span>, but the picture behind it rotates. Night is a different kit. Agent only picks from the approved pool.</p>
+
+    <div class="grid">
+      <div class="col am">
+        <span class="tag">AM · 06:00</span>
+        <h2>Morning</h2>
+        <div class="when">gold light · piano 432 · hope</div>
+        <div class="blur">intro 5–8s: blurry a lot of the time, then the landscape sharpens. Voice does not start at 0:00.</div>
+        <ul>
+          <li>sunrise / dawn (amanecer)</li>
+          <li>clouds breaking</li>
+          <li>sea + horizon</li>
+          <li>forest rays</li>
+          <li>lake gold</li>
+          <li>path in light</li>
+          <li>real mountain peaks</li>
+        </ul>
+        <p class="note">3 intro looks A/B/C × these scenes. Not the same sunrise every Monday.</p>
+      </div>
+
+      <div class="col gold">
+        <span class="tag">GOLDEN · evening</span>
+        <h2>Sunset hour</h2>
+        <div class="when">sun going down · warm · surrender</div>
+        <div class="blur">Do NOT reuse the morning kit. This is golden hour: long shadows, amber, the day closing.</div>
+        <ul>
+          <li>sunset over mountains</li>
+          <li>golden lake / reflection</li>
+          <li>warm fields</li>
+          <li>clouds on fire (soft)</li>
+          <li>horizon dimming</li>
+        </ul>
+        <p class="note">Bridge between 15:00–20:00 and the night vigil. Own 3 looks.</p>
+      </div>
+
+      <div class="col pm">
+        <span class="tag">PM · 22:00</span>
+        <h2>Late night</h2>
+        <div class="when">navy · cello · rest</div>
+        <div class="blur">Cannot drop a morning sunrise on a sleep prayer. Night chrome only.</div>
+        <ul>
+          <li>stars / sky field</li>
+          <li>moon path on water</li>
+          <li>night ocean</li>
+          <li>rain on warm window</li>
+          <li>quiet forest night</li>
+        </ul>
+        <p class="note">3 intro looks A/B/C. Same timing as morning. Different world.</p>
+      </div>
+
+      <div class="col lock">
+        <span class="tag">LOCK</span>
+        <h2>Approved only</h2>
+        <div class="when">if it is not in the cloud, STOP</div>
+        <ul>
+          <li>fonts: 2 title + 1 caption</li>
+          <li>watermark C1 / C2 / C3</li>
+          <li>caption style 1–2 lines</li>
+          <li>verse card style</li>
+          <li>thumb 3 layouts</li>
+          <li>scenes STATUS=VALIDATED</li>
+        </ul>
+        <p class="note">Random = dice on A/B/C + scene ID. Never a new font, never a new mountain from nowhere.</p>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div>
+        <div class="formats">
+          <span class="chip">SHORT 9:16 · 57–63s</span>
+          <span class="chip">CLIP 5 min</span>
+          <span class="chip">PRAYER 15</span>
+          <span class="chip">LONG 45</span>
+        </div>
+        <p class="arrow">→ each format has its own intro/outro length, but it borrows the daypart kit (AM / GOLDEN / NIGHT). 90 min reuses LONG 45 chrome.</p>
+      </div>
+      <div class="note">
+        Verticals (Shorts) = same scene IDs, 9:16 approved crop. Horizontal 16:9 is the mother. One ID, two masters if needed — still not “invent a new picture.”
+      </div>
+    </div>
+    <p class="scribble">cloud: lic.jagf87 · STACK/TEMPLATES + STACK/SCENES · Semana 1 only fills the slots</p>
+  </div>
+</body>
+</html>

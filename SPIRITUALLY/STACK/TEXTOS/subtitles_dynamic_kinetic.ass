@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: KineticSub,Arial-BoldMT,66,&H00FFFFFF,&H00EB6325,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,7.0,3.5,2,70,70,380,1
+Style: KineticCTA,Arial-BoldMT,62,&H00FFFFFF,&H00F755A8,&H00000000,&HAA000000,-1,0,0,0,100,100,0,0,1,7.0,3.5,2,60,60,300,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.40,0:00:01.80,KineticSub,,0,0,0,,Hey... take a deep breath
+Dialogue: 1,0:00:01.80,0:00:03.80,KineticSub,,0,0,0,,with me for a {\c&H00F755A8&}second.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:03.90,0:00:05.80,KineticSub,,0,0,0,,Look, I know you've been carrying
+Dialogue: 1,0:00:05.80,0:00:08.20,KineticSub,,0,0,0,,something heavy {\c&H00F755A8&}lately.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:08.30,0:00:10.00,KineticSub,,0,0,0,,We all make {\c&H00F755A8&}mistakes.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:10.00,0:00:11.90,KineticSub,,0,0,0,,We all stumble and fall {\c&H00F755A8&}short.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:12.00,0:00:14.10,KineticSub,,0,0,0,,Remember this: your mistakes
+Dialogue: 1,0:00:14.10,0:00:16.50,KineticSub,,0,0,0,,will never be bigger than {\c&H00EB6325&}GOD{\c&H00FFFFFF&}'s {\c&H00F755A8&}grace.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:16.60,0:00:18.70,KineticSub,,0,0,0,,No matter what storm
+Dialogue: 1,0:00:18.70,0:00:20.90,KineticSub,,0,0,0,,you are walking through right {\c&H00F755A8&}now...{\c&H00FFFFFF&}
+Dialogue: 1,0:00:21.00,0:00:23.20,KineticSub,,0,0,0,,{\c&H00EB6325&}GOD{\c&H00FFFFFF&} is right beside {\c&H00F755A8&}you.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:23.20,0:00:25.50,KineticSub,,0,0,0,,He protects you, and will never let you {\c&H00F755A8&}go.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:25.60,0:00:27.60,KineticSub,,0,0,0,,Welcome to Eternally {\c&H00F755A8&}Grateful.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:27.60,0:00:29.50,KineticSub,,0,0,0,,You are not alone {\c&H00F755A8&}anymore.{\c&H00FFFFFF&}
+Dialogue: 1,0:00:29.60,0:00:31.30,KineticCTA,,0,0,0,,Type AMEN in the comments,
+Dialogue: 1,0:00:31.30,0:00:33.20,KineticCTA,,0,0,0,,and leave the names of your loved {\c&H00F755A8&}ones...{\c&H00FFFFFF&}
+Dialogue: 1,0:00:33.30,0:00:35.10,KineticCTA,,0,0,0,,Or share this with someone who needs
+Dialogue: 1,0:00:35.10,0:00:37.00,KineticCTA,,0,0,0,,a peaceful moment with {\c&H00EB6325&}GOD{\c&H00FFFFFF&} {\c&H00F755A8&}today.{\c&H00FFFFFF&}

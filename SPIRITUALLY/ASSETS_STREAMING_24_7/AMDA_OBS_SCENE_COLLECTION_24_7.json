@@ -1,0 +1,286 @@
+{
+  "current_program_scene": "🔴 TRANSMISIÓN PRINCIPAL 24/7 (Bucle Sacro)",
+  "current_scene": "🔴 TRANSMISIÓN PRINCIPAL 24/7 (Bucle Sacro)",
+  "current_transition": "Desvanecimiento",
+  "groups": [],
+  "modules": {
+    "auto-scene-switcher": {
+      "active": false,
+      "interval": 300,
+      "non_matching_scene": "",
+      "switch_if_not_matching": false,
+      "switches": []
+    },
+    "output-timer": {
+      "autoStartRecordTimer": false,
+      "autoStartStreamTimer": false,
+      "pauseRecordTimer": true,
+      "recordTimerHours": 0,
+      "recordTimerMinutes": 0,
+      "recordTimerSeconds": 30,
+      "streamTimerHours": 0,
+      "streamTimerMinutes": 0,
+      "streamTimerSeconds": 30
+    },
+    "scripts-tool": []
+  },
+  "name": "AMDA_STREAMING_24_7_YOUTUBE_TIKTOK",
+  "preview_locked": false,
+  "quick_transitions": [
+    {
+      "duration": 500,
+      "fade_to_black": false,
+      "hotkeys": [],
+      "id": 1,
+      "name": "Corte"
+    },
+    {
+      "duration": 1000,
+      "fade_to_black": false,
+      "hotkeys": [],
+      "id": 2,
+      "name": "Desvanecimiento"
+    }
+  ],
+  "saved_projectors": [],
+  "scaling_mode": 0,
+  "scene_order": [
+    {
+      "name": "🔴 TRANSMISIÓN PRINCIPAL 24/7 (Bucle Sacro)"
+    },
+    {
+      "name": "🙏 ALTAR CONTEMPLATIVO & SALMO 91"
+    },
+    {
+      "name": "⏸️ PAUSA TÉCNICA (Regresamos en Breve)"
+    }
+  ],
+  "sources": [
+    {
+      "balance": 0.5,
+      "deinterlace_field_order": 0,
+      "deinterlace_mode": 0,
+      "enabled": true,
+      "flags": 0,
+      "hotkeys": {},
+      "id": "ffmpeg_source",
+      "mixers": 255,
+      "monitoring_type": 0,
+      "muted": false,
+      "name": "Video Master Agradecimiento Sincero",
+      "prev_ver": 503316480,
+      "private_settings": {},
+      "push_to_mute": false,
+      "push_to_mute_delay": 0,
+      "push_to_talk": false,
+      "push_to_talk_delay": 0,
+      "settings": {
+        "clear_on_media_end": false,
+        "close_when_inactive": false,
+        "is_local_file": true,
+        "local_file": "/Users/imac/Desktop/Projects/YOUTUBE CHANNEL/SPIRITUALLY/VIDEO_OFICIAL_AGRADECIMIENTO_SINCERO.mp4",
+        "looping": true,
+        "restart_on_activate": false,
+        "speed_percent": 100
+      },
+      "sync": 0,
+      "versioned_id": "ffmpeg_source",
+      "volume": 1.0
+    },
+    {
+      "balance": 0.5,
+      "deinterlace_field_order": 0,
+      "deinterlace_mode": 0,
+      "enabled": true,
+      "flags": 0,
+      "hotkeys": {},
+      "id": "image_source",
+      "mixers": 0,
+      "monitoring_type": 0,
+      "muted": false,
+      "name": "Fondo Altar Sacro 16:9 432Hz",
+      "prev_ver": 503316480,
+      "private_settings": {},
+      "push_to_mute": false,
+      "push_to_mute_delay": 0,
+      "push_to_talk": false,
+      "push_to_talk_delay": 0,
+      "settings": {
+        "file": "/Users/imac/Desktop/Projects/YOUTUBE CHANNEL/SPIRITUALLY/ASSETS_STREAMING_24_7/miniatura_youtube_16_9_432hz.jpg"
+      },
+      "sync": 0,
+      "versioned_id": "image_source",
+      "volume": 1.0
+    },
+    {
+      "balance": 0.5,
+      "deinterlace_field_order": 0,
+      "deinterlace_mode": 0,
+      "enabled": true,
+      "flags": 0,
+      "hotkeys": {},
+      "id": "scene",
+      "mixers": 0,
+      "monitoring_type": 0,
+      "muted": false,
+      "name": "🔴 TRANSMISIÓN PRINCIPAL 24/7 (Bucle Sacro)",
+      "prev_ver": 503316480,
+      "private_settings": {},
+      "push_to_mute": false,
+      "push_to_mute_delay": 0,
+      "push_to_talk": false,
+      "push_to_talk_delay": 0,
+      "settings": {
+        "custom_size": false,
+        "id_counter": 2,
+        "items": [
+          {
+            "align": 5,
+            "bounds": {
+              "x": 1920.0,
+              "y": 1080.0
+            },
+            "bounds_align": 0,
+            "bounds_type": 2,
+            "crop_bottom": 0,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "group_item_backup": false,
+            "id": 1,
+            "locked": true,
+            "name": "Video Master Agradecimiento Sincero",
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "rot": 0.0,
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_filter": "lanczos",
+            "visible": true
+          }
+        ]
+      },
+      "sync": 0,
+      "versioned_id": "scene",
+      "volume": 1.0
+    },
+    {
+      "balance": 0.5,
+      "deinterlace_field_order": 0,
+      "deinterlace_mode": 0,
+      "enabled": true,
+      "flags": 0,
+      "hotkeys": {},
+      "id": "scene",
+      "mixers": 0,
+      "monitoring_type": 0,
+      "muted": false,
+      "name": "🙏 ALTAR CONTEMPLATIVO & SALMO 91",
+      "prev_ver": 503316480,
+      "private_settings": {},
+      "push_to_mute": false,
+      "push_to_mute_delay": 0,
+      "push_to_talk": false,
+      "push_to_talk_delay": 0,
+      "settings": {
+        "custom_size": false,
+        "id_counter": 2,
+        "items": [
+          {
+            "align": 5,
+            "bounds": {
+              "x": 1920.0,
+              "y": 1080.0
+            },
+            "bounds_align": 0,
+            "bounds_type": 2,
+            "crop_bottom": 0,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "group_item_backup": false,
+            "id": 1,
+            "locked": true,
+            "name": "Fondo Altar Sacro 16:9 432Hz",
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "rot": 0.0,
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_filter": "lanczos",
+            "visible": true
+          }
+        ]
+      },
+      "sync": 0,
+      "versioned_id": "scene",
+      "volume": 1.0
+    },
+    {
+      "balance": 0.5,
+      "deinterlace_field_order": 0,
+      "deinterlace_mode": 0,
+      "enabled": true,
+      "flags": 0,
+      "hotkeys": {},
+      "id": "scene",
+      "mixers": 0,
+      "monitoring_type": 0,
+      "muted": false,
+      "name": "⏸️ PAUSA TÉCNICA (Regresamos en Breve)",
+      "prev_ver": 503316480,
+      "private_settings": {},
+      "push_to_mute": false,
+      "push_to_mute_delay": 0,
+      "push_to_talk": false,
+      "push_to_talk_delay": 0,
+      "settings": {
+        "custom_size": false,
+        "id_counter": 2,
+        "items": [
+          {
+            "align": 5,
+            "bounds": {
+              "x": 1920.0,
+              "y": 1080.0
+            },
+            "bounds_align": 0,
+            "bounds_type": 2,
+            "crop_bottom": 0,
+            "crop_left": 0,
+            "crop_right": 0,
+            "crop_top": 0,
+            "group_item_backup": false,
+            "id": 1,
+            "locked": true,
+            "name": "Fondo Altar Sacro 16:9 432Hz",
+            "pos": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "rot": 0.0,
+            "scale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "scale_filter": "lanczos",
+            "visible": true
+          }
+        ]
+      },
+      "sync": 0,
+      "versioned_id": "scene",
+      "volume": 1.0
+    }
+  ],
+  "transition_duration": 1000,
+  "transitions": []
+}

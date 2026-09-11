@@ -1,0 +1,279 @@
+{
+  "canal": "Oración de Hoy · Fe y Finanzas",
+  "handle": "@oraciondehoyfe",
+  "descripcion_canal": "Oración de la mañana y orden en tus finanzas. Un espacio para orar, soltar la ansiedad por el dinero y administrar con fe lo que Dios ya te dio. Prayer in the morning. Peace with your money. Español e inglés. Amén.",
+  "arquetipo_voz": {
+    "estilo": "Entre padre comprensivo y hermano mayor. Tono sobrio, cálido, pausado, sin estridencias ni gritos litúrgicos.",
+    "velocidad_wpm": 115,
+    "elevenlabs_voice_seed": "Antonio_Warm_Pastor_v2",
+    "pausa_entre_bloques_ms": 1500
+  },
+  "guiones": [
+    {
+      "dia": 1,
+      "titulo": "Oración de la mañana para soltar la ansiedad por el dinero",
+      "descripcion": "Hoy oramos para soltar la carga de las deudas y pedir sabiduría divina para administrar lo que Dios ya puso en tus manos. Deja tu nombre en el chat para bendecir tu hogar.\n\n#OracionDeLaMañana #FeYFinanzas #PazFinanciera",
+      "duracion_objetivo": "15:00",
+      "versiculo_guia": "Filipenses 4:6-7 - Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios.",
+      "bloques": [
+        {
+          "tipo": "intro",
+          "duracion_seg": 45,
+          "nota_voz": "calmada, cercana, tono padre y hermano mayor",
+          "texto": "Buenos días. Si hoy te despertaste con el pecho apretado por el dinero, con la cabeza llena de cuentas o sin saber cómo vas a resolver este mes, no estás solo. Hoy no vamos a correr. Respira profundo. Vamos a orar juntos, a poner los números en manos de Dios y a ordenar el corazón antes de salir a la calle. Quédate conmigo, esto es para ti.",
+          "visual": "Hombre sereno en escritorio de madera rústica al amanecer, taza de café humeante, biblia abierta y libreta de notas, luz dorada natural entrando por la ventana."
+        },
+        {
+          "tipo": "oracion",
+          "duracion_seg": 480,
+          "nota_voz": "solemne, contemplativa, ritmo lento con pausas",
+          "texto": "Padre Santo, en esta mañana vengo delante de ti reconociendo mi fragilidad humana. Tú conoces cada recibo por pagar, cada deuda que me quita el sueño y cada preocupación que cargo sobre mis hombros. Hoy decido no vivir esclavo del temor al futuro. Te entrego mi economía, te entrego mi trabajo y te entrego mi hogar. Declaro que mi proveedor no es el banco ni el gobierno, mi proveedor eres Tú. Llena mi mente de paz y limpia todo espíritu de afán, en el nombre de Jesús.",
+          "visual": "Velas encendidas con movimiento suave, fondo desenfocado de iglesia antigua o santuario cálido, rayos de luz matutina."
+        },
+        {
+          "tipo": "reflexion_financiera",
+          "duracion_seg": 240,
+          "nota_voz": "didáctica, empática, inspiradora",
+          "texto": "Quiero dejarte un principio claro para hoy: Dios no multiplica el desorden, Dios bendice la administración. Cuando la Biblia dice que el Señor es nuestro pastor y nada nos faltará, no te pide que cierres los ojos y gastes sin control; te pide orden. Hoy vas a tomar una hoja de papel y vas a anotar cada centavo que entra y sale. El presupuesto no es una cadena que te aprisiona, es la herramienta de fe que le demuestra a Dios que estás listo para administrar el doble.",
+          "visual": "Gráfico limpio y minimalista sobre fondo oscuro: Regla del 70-20-10 (Vivir, Ahorro, Generosidad), resaltando conceptos clave con tipografía elegante."
+        },
+        {
+          "tipo": "cierre",
+          "duracion_seg": 135,
+          "nota_voz": "esperanzadora, bendición paternal",
+          "texto": "Sal hoy con la frente en alto. El dinero es solo una herramienta, tu valor viene del cielo. Que el Señor bendiga el trabajo de tus manos, abra puertas que nadie puede cerrar y guarde tu casa de todo mal. Amén. Que Dios te bendiga hoy.",
+          "visual": "Primer plano del avatar con mirada cálida y sonrisa de paz, desvanecimiento a pantalla final con versículo y botón de suscripción."
+        }
+      ],
+      "tags": ["oracion de la mañana", "oracion por dinero", "ansiedad financiera", "fe y finanzas", "dios proveera", "paz interior", "oracion diaria", "salir de deudas"]
+    },
+    {
+      "dia": 2,
+      "titulo": "Rompe el ciclo de las deudas: Oración y el principio bíblico de libertad",
+      "descripcion": "La deuda es una carga espiritual y mental. Hoy oramos por disciplina sobrenatural y una estrategia sabia para recuperar tu libertad financiera.\n\n#LibertadFinanciera #CeroDeudas #FeYFinanzas",
+      "duracion_objetivo": "15:00",
+      "versiculo_guia": "Proverbios 22:7 - El rico se enseñorea de los pobres, y el que toma prestado es siervo del que presta.",
+      "bloques": [
+        {
+          "tipo": "intro",
+          "duracion_seg": 45,
+          "nota_voz": "fraternal, directa, empática",
+          "texto": "Hola hermano. La deuda no solo se come tu salario, se come tu paz, tu humor con tu familia y tus ganas de soñar. Pero ninguna cadena es para siempre cuando hay fe y disciplina. Hoy vamos a romper espiritualmente el ciclo del endeudamiento y te daré un paso práctico para empezar a pagar.",
+          "visual": "Primer plano de manos sosteniendo una biblia y rompiendo simbólicamente un papel de deudas bajo luz cálida."
+        },
+        {
+          "tipo": "oracion",
+          "duracion_seg": 480,
+          "nota_voz": "solemne y firme",
+          "texto": "Señor Dios todopoderoso, hoy reconozco las malas decisiones del pasado, las compras por impulso y las deudas que acepté por desesperación. Te pido perdón y hoy pido tu auxilio. Dame autodominio cuando sienta la tentación de gastar lo que no tengo. Corta las ataduras financieras sobre mi familia y bendice cada peso que gano para honrar mis compromisos.",
+          "visual": "Altar iluminado con cirios y fondo de arquitectura sacra con suave resplandor dorado."
+        },
+        {
+          "tipo": "reflexion_financiera",
+          "duracion_seg": 240,
+          "nota_voz": "pedagógica, estructurada",
+          "texto": "Aplica hoy el Método Bola de Nieve Bíblico: Ordena tus deudas de la más chica a la más grande. Ataca la más pequeña con cada recurso extra que tengas, pagando solo el mínimo en las demás. Cuando mates esa primera deuda pequeña, tu mente sentirá la victoria de la libertad y esa fuerza te llevará a liquidar la siguiente. Dios honra el esfuerzo de quien decide ponerse de pie.",
+          "visual": "Infografía animada en pizarra de madera mostrando el método de bola de nieve financiera."
+        },
+        {
+          "tipo": "cierre",
+          "duracion_seg": 135,
+          "nota_voz": "cálida y esperanzadora",
+          "texto": "No te rindas hoy. Cada día que pasas en orden es un paso más cerca de tu libertad total. Camina en bendición y deja que la sabiduría de Dios guíe tus gastos. Amén. Que Dios te bendiga hoy.",
+          "visual": "Avatar despidiéndose con gesto de bendición, música 432 Hz en fade out."
+        }
+      ],
+      "tags": ["salir de deudas", "oracion para pagar deudas", "libertad financiera cristiana", "bola de nieve", "proverbios 22", "fe practica", "prosperidad biblica"]
+    },
+    {
+      "dia": 3,
+      "titulo": "Dios bendice al dador alegre: La ciencia y la fe detrás del dar",
+      "descripcion": "La generosidad no es una pérdida, es una siembra. Descubre cómo dar con alegría desbloquea abundancia y resetea tu mente de la escasez.\n\n#Generosidad #DiezmoInteligente #Abundancia",
+      "duracion_objetivo": "15:00",
+      "versiculo_guia": "2 Corintios 9:7 - Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre.",
+      "bloques": [
+        {
+          "tipo": "intro",
+          "duracion_seg": 45,
+          "nota_voz": "inspiradora, luminosa",
+          "texto": "Buenos días. La mentalidad de pobreza cree que retener lo es todo. La mentalidad del Reino sabe que la mano cerrada para no dar tampoco puede abrirse para recibir. Hoy oramos por un corazón desprendido y una mente abundante.",
+          "visual": "Brote verde germinando en tierra fértil con gotas de rocío iluminadas por el sol."
+        },
+        {
+          "tipo": "oracion",
+          "duracion_seg": 480,
+          "nota_voz": "agradecida y profunda",
+          "texto": "Señor amado, gracias por cada bendición que pones en mi mesa. Quita de mi pecho el miedo a la escasez. Enséñame a ser generoso con quien pasa necesidad, a bendecir a mis padres, a mi familia y a mi comunidad. Que mi corazón nunca adore al dinero, sino que el dinero sirva para amar y bendecir a los demás.",
+          "visual": "Manos abiertas extendidas en señal de gratitud frente a un fondo celestial en tonos azul noche y oro."
+        },
+        {
+          "tipo": "reflexion_financiera",
+          "duracion_seg": 240,
+          "nota_voz": "científica y reflexiva (neurociencia)",
+          "texto": "La neurociencia moderna demuestra que cuando una persona practica la generosidad desinteresada, el cerebro libera oxitocina, serotonina y dopamina, reduciendo los niveles de cortisol en sangre y apagando la amígdala que produce miedo al futuro. El principio de dar no fue inventado para quitarte dinero, fue diseñado por Dios para sanar tu mente y mantenerte en estado de confianza y claridad.",
+          "visual": "Animación visual sutil de conexiones neuronales iluminadas combinada con símbolos de balanza y corazón."
+        },
+        {
+          "tipo": "cierre",
+          "duracion_seg": 135,
+          "nota_voz": "paz profunda",
+          "texto": "Haz hoy un acto de bondad sin que nadie se entere. Dios, que ve en lo secreto, te recompensará en público. Amén. Que Dios te bendiga hoy.",
+          "visual": "Avatar despidiendo la transmisión con Salmo de bendición en pantalla."
+        }
+      ],
+      "tags": ["dador alegre", "neurociencia y fe", "cortisol y ansiedad", "generosidad", "prosperidad divina", "oracion matutina", "2 corintios 9"]
+    },
+    {
+      "dia": 4,
+      "titulo": "Oración por tu trabajo, negocio y sabiduría para emprender",
+      "descripcion": "El trabajo honesto es tu púlpito y tu vehículo de provisión. Oramos por nuevas oportunidades, clientes y sabiduría sobrenatural para negociar.\n\n#OracionPorTrabajo #EmprendimientoConFe #Sabiduria",
+      "duracion_objetivo": "15:00",
+      "versiculo_guia": "Deuteronomio 8:18 - Acuérdate de Jehová tu Dios, porque él te da el poder para hacer las riquezas.",
+      "bloques": [
+        {
+          "tipo": "intro",
+          "duracion_seg": 45,
+          "nota_voz": "enérgica pero serena",
+          "texto": "Buenos días. Hoy no vas a trabajar solo para sobrevivir. Vas a trabajar como quien ejerce una vocación santa. Dios te dio talentos únicos y hoy pedimos que esos talentos se multipliquen.",
+          "visual": "Amanecer urbano iluminando edificios y herramientas de trabajo limpias."
+        },
+        {
+          "tipo": "oracion",
+          "duracion_seg": 480,
+          "nota_voz": "clamor confiado y reverente",
+          "texto": "Señor, bendice mi lugar de trabajo y mi negocio. Si estoy buscando empleo, abre puertas donde parecía no haber camino. Pon gracia sobre mi vida ante mis jefes, socios y clientes. Dame integridad para nunca hacer trampas y excelencia para hacer todo como para Ti.",
+          "visual": "Santuario con vitrales de luz multicolor y luz sobre el atril sagrado."
+        },
+        {
+          "tipo": "reflexion_financiera",
+          "duracion_seg": 240,
+          "nota_voz": "práctica de negocios",
+          "texto": "Para que tu negocio crezca necesitas tres cosas: resolver un problema real, tratar al cliente como a tu propia familia y reinvertir las primeras ganancias. No te comas la semilla. La semilla se siembra, solo la cosecha se disfruta. La paciencia es la mayor virtud financiera.",
+          "visual": "Esquema gráfico elegante: Semilla vs Cosecha, reinversión del 50% de utilidades."
+        },
+        {
+          "tipo": "cierre",
+          "duracion_seg": 135,
+          "nota_voz": "alentadora",
+          "texto": "Sal con entusiasmo. Tu labor bendice al mundo y Dios acompaña cada paso. Amén. Que Dios te bendiga hoy.",
+          "visual": "Pantalla final con versículo Deuteronomio 8:18 y música suave de piano."
+        }
+      ],
+      "tags": ["oracion por trabajo", "conseguir empleo", "sabiduria para emprender", "prosperidad laboral", "deuteronomio 8", "negocio bendecido"]
+    },
+    {
+      "dia": 5,
+      "titulo": "Construyendo tu Fondo de Paz: El ahorro como testimonio de fe",
+      "descripcion": "Ahorrar no es falta de fe, es prudencia bíblica. Aprende la lección de la hormiga de Proverbios y construye tu fondo de tranquilidad familiar.\n\n#FondoDeEmergencia #AhorroConFe #Proverbios6",
+      "duracion_objetivo": "15:00",
+      "versiculo_guia": "Proverbios 6:6-8 - Ve a la hormiga, oh perezoso, mira sus caminos, y sé sabio; la cual prepara en el verano su comida.",
+      "bloques": [
+        {
+          "tipo": "intro",
+          "duracion_seg": 45,
+          "nota_voz": "reflexiva y pedagógica",
+          "texto": "Hola hermano. Mucha gente cree que tener un fondo de ahorro es dudar de que Dios proveerá. La Biblia enseña exactamente lo opuesto: José ahorró durante 7 años en Egipto y salvó a una nación entera del hambre. Hoy oramos por sabiduría previsora.",
+          "visual": "Campos dorados de trigo meciéndose bajo el viento suave del atardecer."
+        },
+        {
+          "tipo": "oracion",
+          "duracion_seg": 480,
+          "nota_voz": "calma y sincera",
+          "texto": "Señor, enséñame a distinguir entre mis verdaderas necesidades y mis caprichos pasajeros. Dame la fuerza para apartar una porción de lo que recibo antes de gastar. Que mi hogar sea un remanso de previsión y que las tempestades inesperadas no derrumben nuestra tranquilidad.",
+          "visual": "Interior cálido de una casa de madera con fuego encendido en la chimenea y biblia abierta."
+        },
+        {
+          "tipo": "reflexion_financiera",
+          "duracion_seg": 240,
+          "nota_voz": "clara y accionable",
+          "texto": "Tu meta para los próximos 90 días no es hacerte millonario: es crear tu 'Fondo de Paz' de 1,000 dólares o el equivalente a un mes de tus gastos básicos. Guárdalo en una cuenta separada a la que no tengas tarjeta de débito en la mano. Saber que tienes ese colchón reduce tu estrés un 80% y te permite orar y pensar con calma.",
+          "visual": "Diagrama de protección patrimonial: Nivel 1 Fondo de Paz, Nivel 2 Cero Deudas, Nivel 3 Inversión."
+        },
+        {
+          "tipo": "cierre",
+          "duracion_seg": 135,
+          "nota_voz": "fraternal",
+          "texto": "La paz no es la ausencia de problemas, es saber que estás preparado. Que Dios cuide tu despensa y bendiga tu esfuerzo. Amén. Que Dios te bendiga hoy.",
+          "visual": "Avatar despidiendo y recordatorio de suscribirse al canal."
+        }
+      ],
+      "tags": ["fondo de emergencia", "proverbios 6", "ahorro con proposito", "jose en egipto", "educacion financiera cristiana", "paz en el hogar"]
+    },
+    {
+      "dia": 6,
+      "titulo": "Vence la envidia y la comparación: El secreto del contentamiento bíblico",
+      "descripcion": "Las redes sociales te hacen gastar dinero que no tienes para impresionar a gente que no te importa. Hoy recuperamos el contentamiento que produce verdadera riqueza.\n\n#Contentamiento #PazMental #FinanzasSanas",
+      "duracion_objetivo": "15:00",
+      "versiculo_guia": "1 Timoteo 6:6 - Pero gran ganancia es la piedad acompañada de contentamiento.",
+      "bloques": [
+        {
+          "tipo": "intro",
+          "duracion_seg": 45,
+          "nota_voz": "íntima, casi confesional",
+          "texto": "Buenos días. ¿Alguna vez viste en tu celular la casa, el coche o las vacaciones de alguien más y de pronto tu propia vida te pareció insuficiente? Esa trampa destruye presupuestos y matrimonios. Hoy vamos a desactivar la comparación y a celebrar lo que Dios te ha dado a ti.",
+          "visual": "Persona observando un paisaje montañoso en calma, respirando aire puro sin teléfono."
+        },
+        {
+          "tipo": "oracion",
+          "duracion_seg": 480,
+          "nota_voz": "suave y sanadora",
+          "texto": "Padre amado, arranca de raíz toda envidia y competencia que intente alojarse en mi corazón. Te doy gracias por el techo que tengo hoy, por la ropa que me viste y por el plato de comida en mi mesa. Mi identidad no la define lo que poseo, sino que soy tu hijo amado. Lléname de verdadera gratitud.",
+          "visual": "Luz dorada descendiendo sobre un arroyo cristalino y hojas verdes."
+        },
+        {
+          "tipo": "reflexion_financiera",
+          "duracion_seg": 240,
+          "nota_voz": "psicología financiera",
+          "texto": "El 60% de los gastos innecesarios nacen del deseo de validación externa. El secreto de la riqueza duradera es vivir por debajo de tus posibilidades y ser indiferente al qué dirán. Quien no necesita aparentar, tiene dinero de sobra para invertir, ahorrar y bendecir a otros.",
+          "visual": "Texto en pantalla: 'El hombre más rico no es el que más tiene, sino el que menos necesita para ser feliz'."
+        },
+        {
+          "tipo": "cierre",
+          "duracion_seg": 135,
+          "nota_voz": "reparadora",
+          "texto": "Ama tu vida, valora a tu familia y agradece cada pequeño detalle de hoy. Dios tiene un plan perfecto a tu medida. Amén. Que Dios te bendiga hoy.",
+          "visual": "Avatar cerrando la transmisión en serenidad."
+        }
+      ],
+      "tags": ["contentamiento", "1 timoteo 6", "dejar de aparentar", "paz mental", "gratitud", "oracion nocturna", "finanzas familiares"]
+    },
+    {
+      "dia": 7,
+      "titulo": "Resumen semanal: La oración de consagración de tus finanzas y tu hogar",
+      "descripcion": "Cerramos la primera semana consagrando toda nuestra economía, trabajo y metas a Dios. Oración profunda para blindar tu hogar de escasez.\n\n#Consagracion #SemanaBendecida #FeYFinanzas",
+      "duracion_objetivo": "20:00",
+      "versiculo_guia": "Salmo 37:5 - Encomienda a Jehová tu camino, y confía en él; y él hará.",
+      "bloques": [
+        {
+          "tipo": "intro",
+          "duracion_seg": 60,
+          "nota_voz": "solemne y celebratoria",
+          "texto": "Buenos días. Hemos completado nuestros primeros 7 días aprendiendo a orar y administrar con sabiduría. Hoy no pedimos cosas materiales superficiales; hoy consagramos todo lo que somos y tenemos al Dios que nunca falla. Prepárate para orar con fervor.",
+          "visual": "Altar majestuoso con cirios encendidos, biblia de páginas doradas y salterio."
+        },
+        {
+          "tipo": "oracion",
+          "duracion_seg": 600,
+          "nota_voz": "clamor profundo y reverente",
+          "texto": "Señor Dios de Abraham, Isaac y Jacob, Creador de los cielos y de la tierra. Hoy pongo sobre este altar mis finanzas, mi familia, mi salud y mi porvenir. Si he sido mal administrador, hoy corrijo mi rumbo. Consagro mi billetera, mis cuentas bancarias y mi trabajo para que sean instrumento de bendición y luz. Reprendo todo espíritu de ruina y declaro que en mi casa reinará la paz, el orden y la multiplicación. Amén.",
+          "visual": "Cámara lenta recorriendo un templo antiguo con luz celestial y partículas de incienso iluminadas."
+        },
+        {
+          "tipo": "reflexion_financiera",
+          "duracion_seg": 300,
+          "nota_voz": "resumen estratégico",
+          "texto": "Esta semana aprendiste 4 pilares: 1) Dios bendice el orden, no el caos; 2) Matar deudas con la bola de nieve; 3) Generosidad como reseteo neuronal del miedo; y 4) Construir tu Fondo de Paz. Si aplicas estos 4 pilares con constancia, en 6 meses tu vida financiera será irreconocible. La fe sin obras es muerta, pero la fe con administración es imparable.",
+          "visual": "Resumen infográfico con los 4 pilares del Reino para las finanzas personales."
+        },
+        {
+          "tipo": "cierre",
+          "duracion_seg": 180,
+          "nota_voz": "bendición solemne",
+          "texto": "Recibe la paz de Dios que sobrepasa todo entendimiento. Comparte esta oración con quien ames y prepárate para una nueva semana de victorias. Amén. Que Dios te bendiga hoy.",
+          "visual": "Pantalla de créditos del canal, versículo Salmo 37:5 y enlaces a videos de la serie."
+        }
+      ],
+      "tags": ["consagracion financiera", "salmo 37", "oracion semanal", "prosperidad en dios", "finanzas biblicas", "resumen semanal", "canal de oracion"]
+    }
+  ]
+}
