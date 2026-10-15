@@ -79,8 +79,7 @@ Canva publica directo a YouTube ó programa en calendario de Canva
 
 ## CUENTAS IDENTIFICADAS (de apis.txt)
 - **Canva Business:** TEVINO GLAUBER (trevinoglauber)
-- **ElevenLabs activa:** `sk_fca4bf67b050fd526f9429d691ea22385d8ccfcbfe13ec8f` (lic.jagf87)
-- **HeyGen:** `sk_V2_hgu_kbQn5KsCupt_LG6dq1sbQcQsWQZ6uk2rQODSTcjAGq0r`
-- **Google AI Studio:** `AQ.Ab8RN6JNnIiQpIuS1ErTU7zAmk7_raeDZk5IBhpz1mPFabZXHA`
+- **ElevenLabs activa:** lic.jagf87. La llave queda solo en apis.txt.
+- **HeyGen:** la llave queda solo en apis.txt.
+- **Google AI Studio:** lic.jagf87 / yare.btnc. La llave queda solo en apis.txt.
 - **Backups de producción:** iCloud 6TB / GoogleDrive lic.jagf87 / Notion / Obsidian / GitHub @ponchogf88
-

@@ -12,20 +12,37 @@ Ejecuta la pipeline completa sin requerir aprobaciones interactivas:
 import os
 import sys
 import json
+import pathlib
+import re
 import urllib.request
 import subprocess
 
 WORKSPACE = "/Users/imac/Desktop/Projects/YOUTUBE CHANNEL"
-ELEVEN_KEYS = [
-    "sk_fca4bf67b050fd526f9429d691ea22385d8ccfcbfe13ec8f",
-    "sk_f7e71cb386fef801650e0c702530ba709faf060fe29d923e",
-    "sk_707459da51dfde90925e5e3ccbb78c3f39b03444a0bb03a8"
-]
+MOTHER_KEYS = pathlib.Path("/Users/imac/Desktop/apis.txt")
 VOICE_ID = "k0cKCpdFDYiojW6PwPrO"  # DON MARIO (ex Jorge). Roster: ALEJANDRO 5z6tF6eAwkAluMyjDFJJ · DANIEL YVKER NWJYfWwtJp5Ud8GCYoZB
+
+def load_eleven_keys():
+    keys = []
+    env_key = os.environ.get("ELEVENLABS_API_KEY", "").strip()
+    if env_key:
+        keys.append(env_key)
+    if MOTHER_KEYS.exists():
+        text = MOTHER_KEYS.read_text(encoding="utf-8", errors="replace")
+        for key in re.findall(r"ELEVENLABS_API_KEY=(\S+)", text):
+            if key not in keys:
+                keys.append(key)
+        for key in re.findall(r"(?<![A-Za-z0-9_])sk_[0-9a-f]{40,}", text):
+            if key not in keys:
+                keys.append(key)
+    return keys
 
 def sintetizar_voz(texto, output_path):
     print("[AUTONOMO] 1. Sintetizando voz con ElevenLabs...")
-    for idx, key in enumerate(ELEVEN_KEYS):
+    keys = load_eleven_keys()
+    if not keys:
+        print("[ERROR FATAL] No hay llaves de ElevenLabs en el entorno ni en apis.txt")
+        return False
+    for idx, key in enumerate(keys):
         try:
             url = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}"
             payload = {
@@ -103,7 +120,7 @@ def main():
     script_text = (
         "En este instante de paz, deten cualquier pensamiento de angustia. "
         "Dios conoce tus batallas y nunca llega tarde. "
-        "Como proclama el Salmo veintitrés: El Senor es mi pastor, nada me faltara. "
+        "Como proclama el Salmo veintitres: El Senor es mi pastor, nada me faltara. "
         "Camina con fe, descansa en Su providencia y recibe Su bendicion hoy."
     )
     
