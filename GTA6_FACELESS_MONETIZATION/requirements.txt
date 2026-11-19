@@ -1,0 +1,8 @@
+# Requerimientos para el Pipeline de Renderizado y Monetización GTA 6
+ffmpeg-python>=0.2.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+yt-dlp>=2024.08.01
+requests>=2.31.0
+tqdm>=4.66.0
+colorama>=0.4.6

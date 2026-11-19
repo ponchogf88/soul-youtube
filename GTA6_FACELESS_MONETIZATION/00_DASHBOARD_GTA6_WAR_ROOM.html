@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GTA 6 Faceless War Room — Monetización Multi-Capa (AMDA)</title>
+  <style>
+    :root {
+      --bg-void: #090D16;
+      --bg-surface: #111827;
+      --bg-card: rgba(17, 24, 39, 0.86);
+      --border-glass: rgba(255, 255, 255, 0.09);
+      --magenta: #FF2A85;
+      --cyan: #00F0FF;
+      --amber: #F59E0B;
+      --emerald: #10B981;
+      --crimson: #EF4444;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background:
+        radial-gradient(circle at 10% 8%, rgba(255, 42, 133, 0.12) 0%, transparent 36%),
+        radial-gradient(circle at 90% 10%, rgba(0, 240, 255, 0.11) 0%, transparent 38%),
+        radial-gradient(circle at 50% 95%, rgba(245, 158, 11, 0.07) 0%, transparent 45%),
+        var(--bg-void);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.55;
+      padding: 20px;
+    }
+
+    .shell { max-width: 1380px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+
+    /* Top War Room Header */
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 26px;
+      background: var(--bg-card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border-glass);
+      border-radius: 18px;
+      box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand-col { display: flex; flex-direction: column; gap: 8px; max-width: 720px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 999px; font-size: 11px;
+      font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase;
+    }
+    .badge-magenta { background: rgba(255, 42, 133, 0.14); color: var(--magenta); border: 1px solid rgba(255, 42, 133, 0.35); }
+    .badge-cyan { background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid rgba(0, 240, 255, 0.35); }
+    .badge-amber { background: rgba(245, 158, 11, 0.14); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.35); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.14); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.35); }
+    .badge-crimson { background: rgba(239, 68, 68, 0.14); color: var(--crimson); border: 1px solid rgba(239, 68, 68, 0.35); }
+
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--magenta); box-shadow: 0 0 10px var(--magenta); animation: pulse 1.8s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(1.25); } }
+
+    h1 { font-size: 25px; font-weight: 800; letter-spacing: -0.4px; }
+    .sub { color: var(--text-muted); font-size: 13.5px; }
+
+    .countdown-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+    .timer-box {
+      background: rgba(9, 13, 22, 0.85);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 12px 16px;
+      min-width: 215px;
+    }
+    .timer-box.launch { border-color: rgba(255, 42, 133, 0.4); }
+    .timer-box.ypp { border-color: rgba(0, 240, 255, 0.35); }
+    .timer-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); font-weight: 700; }
+    .timer-val { font-family: var(--font-mono); font-size: 20px; font-weight: 800; margin-top: 4px; }
+    .timer-sub { font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Navigation Tabs */
+    .tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tab-btn {
+      background: rgba(17, 24, 39, 0.72);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      padding: 10px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover { color: var(--text-main); border-color: rgba(0, 240, 255, 0.35); }
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(255, 42, 133, 0.2), rgba(0, 240, 255, 0.14));
+      color: var(--text-main);
+      border-color: var(--cyan);
+      box-shadow: 0 0 18px rgba(0, 240, 255, 0.14);
+    }
+
+    .panel { display: none; gap: 18px; flex-direction: column; }
+    .panel.active { display: flex; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+    }
+    .card h2 { font-size: 17px; font-weight: 800; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .card p.desc { font-size: 13px; color: var(--text-muted); margin-bottom: 14px; }
+
+    /* Calculator Inputs */
+    .slider-group { display: flex; flex-direction: column; gap: 14px; }
+    .input-row { display: flex; flex-direction: column; gap: 6px; }
+    .input-head { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; }
+    .input-head span.val { font-family: var(--font-mono); color: var(--cyan); font-weight: 700; }
+    input[type="range"] { width: 100%; accent-color: var(--magenta); cursor: pointer; }
+    .toggle-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 12px; border-radius: 10px;
+      background: rgba(9, 13, 22, 0.7); border: 1px solid var(--border-glass);
+      font-size: 13px;
+    }
+
+    .revenue-total {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(0, 240, 255, 0.1));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    .revenue-total .big { font-family: var(--font-mono); font-size: 32px; font-weight: 800; color: var(--emerald); }
+    .revenue-total .mxn { font-family: var(--font-mono); font-size: 14px; color: var(--text-main); margin-top: 2px; }
+
+    .breakdown-list { display: flex; flex-direction: column; gap: 8px; }
+    .breakdown-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 12px; border-radius: 10px;
+      background: rgba(9, 13, 22, 0.65); border: 1px solid var(--border-glass);
+      font-size: 13px;
+    }
+    .breakdown-item .amt { font-family: var(--font-mono); font-weight: 700; color: var(--amber); }
+
+    /* Sub-niches Selector */
+    .niche-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .niche-btn {
+      padding: 9px 14px; border-radius: 10px; border: 1px solid var(--border-glass);
+      background: rgba(9, 13, 22, 0.75); color: var(--text-muted);
+      cursor: pointer; font-size: 12.5px; font-weight: 700; transition: 0.2s;
+    }
+    .niche-btn.active { border-color: var(--magenta); color: var(--text-main); background: rgba(255, 42, 133, 0.16); }
+
+    .metric-box {
+      background: rgba(9, 13, 22, 0.72); border: 1px solid var(--border-glass);
+      border-radius: 12px; padding: 12px;
+    }
+    .metric-box .lbl { font-size: 11px; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+    .metric-box .num { font-family: var(--font-mono); font-size: 16px; font-weight: 800; margin-top: 4px; color: var(--cyan); }
+
+    /* Script Viewer */
+    .script-card {
+      background: rgba(9, 13, 22, 0.8);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .script-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .script-title { font-weight: 800; font-size: 14.5px; }
+    .copy-btn {
+      background: rgba(0, 240, 255, 0.14);
+      border: 1px solid rgba(0, 240, 255, 0.4);
+      color: var(--cyan);
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .copy-btn:hover { background: rgba(0, 240, 255, 0.24); }
+    .copy-btn.copied { background: rgba(16, 185, 129, 0.2); border-color: var(--emerald); color: var(--emerald); }
+    pre.script-body {
+      white-space: pre-wrap;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: #E2E8F0;
+      background: rgba(17, 24, 39, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px;
+      line-height: 1.6;
+    }
+
+    /* Checklist */
+    .progress-wrap { width: 100%; height: 10px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; margin: 10px 0 16px; }
+    .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--magenta), var(--cyan), var(--emerald)); transition: width 0.25s ease; }
+
+    .check-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 14px; border-radius: 12px;
+      background: rgba(9, 13, 22, 0.72); border: 1px solid var(--border-glass);
+      cursor: pointer; transition: 0.15s; margin-bottom: 8px;
+    }
+    .check-item:hover { border-color: rgba(0, 240, 255, 0.35); }
+    .check-item.done { border-color: rgba(16, 185, 129, 0.45); background: rgba(16, 185, 129, 0.08); }
+    .check-item input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--emerald); cursor: pointer; }
+    .check-text strong { display: block; font-size: 13.5px; }
+    .check-text span { font-size: 12px; color: var(--text-muted); }
+
+    code.cli {
+      display: block; font-family: var(--font-mono); font-size: 12px;
+      background: #05080F; color: var(--cyan); padding: 12px; border-radius: 10px;
+      border: 1px solid rgba(0, 240, 255, 0.25); overflow-x: auto; white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="brand-col">
+      <div class="pill-row">
+        <span class="badge badge-magenta"><span class="pulse"></span> GTA 6 Launch War Room</span>
+        <span class="badge badge-cyan">Unidad F · AMDA Engine</span>
+        <span class="badge badge-emerald">Radio 0% · -14 LUFS · Zero Spoilers</span>
+      </div>
+      <h1>GTA 6 Faceless Monetization Engine (Nov 2026 – Feb 2027)</h1>
+      <p class="sub">Sistema multi-capa diseñado para monetizar desde el Día 1 (Afiliados 212 GB + Mapa $6.99 + TikTok CRP &gt;60s + Puente Ciberseguridad) y cruzar las 4,000 hrs / 10M Shorts de YPP antes del aumento de requisitos del 1 de febrero de 2027.</p>
+    </div>
+
+    <div class="countdown-grid">
+      <div class="timer-box launch">
+        <div class="timer-label">Ventana Lanzamiento Mundial</div>
+        <div class="timer-val" id="launchCountdown" style="color: var(--magenta);">Calculando...</div>
+        <div class="timer-sub">Jueves 19 Nov 2026 · PS5 &amp; Xbox Series X|S (212 GB)</div>
+      </div>
+      <div class="timer-box ypp">
+        <div class="timer-label">Cierre YPP 4,000h (Grandfathered)</div>
+        <div class="timer-val" id="yppCountdown" style="color: var(--cyan);">Calculando...</div>
+        <div class="timer-sub">1 Feb 2027 sube a 8,000 hrs / 20M Shorts</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="tabs">
+    <button class="tab-btn active" onclick="switchTab('calc', this)">💰 Calculadora Multi-Capa</button>
+    <button class="tab-btn" onclick="switchTab('niches', this)">🎯 Los 5 Sub-Nichos</button>
+    <button class="tab-btn" onclick="switchTab('scripts', this)">🎙️ Guiones 1-Clic (ElevenLabs)</button>
+    <button class="tab-btn" onclick="switchTab('checklist', this)">🛡️ Checklist Anti-Strike &amp; CLI</button>
+  </nav>
+
+  <!-- PANEL 1: CALCULATOR -->
+  <section id="tab-calc" class="panel active">
+    <div class="grid-2">
+      <div class="card">
+        <h2>🎛️ Simulador de Tráfico y Conversión (30 Días)</h2>
+        <p class="desc">Ajusta tus proyecciones de vistas y observa por qué el gaming faceless solo despega cuando apilas las 6 capas (no solo AdSense).</p>
+
+        <div class="slider-group">
+          <div class="input-row">
+            <div class="input-head"><span>Vistas YouTube Largo — EE.UU. / Tier 1 (Auto-Dubbing EN)</span><span class="val" id="lblUsViews">250,000</span></div>
+            <input type="range" id="usViews" min="0" max="2000000" step="25000" value="250000" oninput="recalc()">
+          </div>
+
+          <div class="input-row">
+            <div class="input-head"><span>Vistas YouTube Largo — México / LATAM (Español)</span><span class="val" id="lblMxViews">500,000</span></div>
+            <input type="range" id="mxViews" min="0" max="3000000" step="25000" value="500000" oninput="recalc()">
+          </div>
+
+          <div class="input-row">
+            <div class="input-head"><span>Vistas Calificadas TikTok CRP (&gt;62s, MX/US)</span><span class="val" id="lblCrpViews">800,000</span></div>
+            <input type="range" id="crpViews" min="0" max="5000000" step="50000" value="800000" oninput="recalc()">
+          </div>
+
+          <div class="input-row">
+            <div class="input-head"><span>Ventas Afiliado SSD 2TB / Hardware "Crisis 212 GB" ($140 avg, 5%)</span><span class="val" id="lblSsdSales">60 ventas</span></div>
+            <input type="range" id="ssdSales" min="0" max="500" step="5" value="60" oninput="recalc()">
+          </div>
+
+          <div class="input-row">
+            <div class="input-head"><span>Ventas Infoproducto "Leonida 100% Tracker" ($6.99 · 92% neto)</span><span class="val" id="lblMapSales">180 ventas</span></div>
+            <input type="range" id="mapSales" min="0" max="1500" step="10" value="180" oninput="recalc()">
+          </div>
+
+          <div class="input-row">
+            <div class="input-head"><span>Vistas Whop Clipping / Puente Ciberseguridad "GTA 6 PC Scam"</span><span class="val" id="lblWhopViews">300,000</span></div>
+            <input type="range" id="whopViews" min="0" max="2000000" step="25000" value="300000" oninput="recalc()">
+          </div>
+
+          <label class="toggle-row">
+            <span><strong>Formulario W-8BEN Aprobado</strong> (Baja retención fiscal EE.UU. de 30% → 10%)</span>
+            <input type="checkbox" id="w8ben" checked onchange="recalc()" style="width:18px;height:18px;accent-color:var(--emerald);">
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>📊 Proyección Neta Estimada (30 Días)</h2>
+        <p class="desc">Cálculo conservador basado en RPM real de gaming híbrido ($3.20 US / $0.65 MX) y CRP ($0.45/1K).</p>
+
+        <div class="revenue-total">
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;">Ingreso Combinado Estimado (Neto)</div>
+          <div class="big" id="totalUsd">$0.00 USD</div>
+          <div class="mxn" id="totalMxn">≈ $0 MXN (Tipo de cambio ref: 20.00 MXN/USD)</div>
+          <div style="font-size:12px;color:var(--emerald);margin-top:6px;" id="w8Savings">Ahorro fiscal W-8BEN: $0.00 USD retenidos de menos</div>
+        </div>
+
+        <div class="breakdown-list">
+          <div class="breakdown-item"><span>📺 YouTube AdSense Tier 1 (EN Auto-Dub @ $3.20 RPM neto W-8BEN)</span><span class="amt" id="outUs">$0</span></div>
+          <div class="breakdown-item"><span>🌎 YouTube AdSense LATAM/MX (ES @ $0.65 RPM)</span><span class="amt" id="outMx">$0</span></div>
+          <div class="breakdown-item"><span>📱 TikTok Creator Rewards (&gt;62s Search Value @ $0.45/1K)</span><span class="amt" id="outCrp">$0</span></div>
+          <div class="breakdown-item"><span>💾 Afiliados Hardware 212 GB (SSD NVMe / Xbox Card)</span><span class="amt" id="outSsd">$0</span></div>
+          <div class="breakdown-item"><span>🗺️ Infoproducto Leonida 100% Tracker ($6.99 USD)</span><span class="amt" id="outMap">$0</span></div>
+          <div class="breakdown-item"><span>🛡️ Whop Clipping + Puente Cyber "GTA 6 PC" ($1.50/1K)</span><span class="amt" id="outWhop">$0</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL 2: 5 SUB-NICHES -->
+  <section id="tab-niches" class="panel">
+    <div class="card">
+      <h2>🎯 Selector Táctico de los 5 Sub-Nichos Ganadores</h2>
+      <p class="desc">Selecciona cada sub-nicho para auditar su RPM real, riesgo de copyright frente a Take-Two y estructura de monetización.</p>
+
+      <div class="niche-tabs" id="nicheButtons">
+        <button class="niche-btn active" onclick="selectNiche(0, this)">1. Mythbusters &amp; IA NPCs</button>
+        <button class="niche-btn" onclick="selectNiche(1, this)">2. Economía &amp; Rutas Día 1</button>
+        <button class="niche-btn" onclick="selectNiche(2, this)">3. Documental Noir &amp; Lore</button>
+        <button class="niche-btn" onclick="selectNiche(3, this)">4. Crisis 212 GB &amp; Hardware</button>
+        <button class="niche-btn" onclick="selectNiche(4, this)">5. Puente Ciberseguridad (Alto CPM)</button>
+      </div>
+
+      <div id="nicheDetail"></div>
+    </div>
+  </section>
+
+  <!-- PANEL 3: SCRIPTS 1-CLICK -->
+  <section id="tab-scripts" class="panel">
+    <div class="card">
+      <h2>🎙️ Guiones Listos para ElevenLabs / Teleprompter (Copiado en 1 Clic)</h2>
+      <p class="desc">Incluye los ganchos maestros largos (ES + EN + Puente Cyber) y los 3 Shorts CRP con Triple Hook no redundante (&gt;62s).</p>
+      <div class="grid-2" id="scriptsGrid"></div>
+    </div>
+  </section>
+
+  <!-- PANEL 4: CHECKLIST & CLI -->
+  <section id="tab-checklist" class="panel">
+    <div class="grid-2">
+      <div class="card">
+        <h2>🛡️ Checklist Obligatorio Pre-Upload Anti-Strike</h2>
+        <p class="desc">Verificación interactiva basada en la política legal de Take-Two / Rockstar y YouTube *Inauthentic Content* 2025–2026. <span id="checkScore" style="color:var(--cyan);font-weight:700;">0%</span></p>
+        <div class="progress-wrap"><div class="progress-fill" id="progressBar"></div></div>
+        <div id="checklistItems"></div>
+      </div>
+
+      <div class="card">
+        <h2>⚙️ Comandos del Pipeline (`gta6_faceless_pipeline.py`)</h2>
+        <p class="desc">Ejecuta estos comandos en terminal para sanear audio, evitar Content ID, aplicar micro-zoom anti-duplicado y masterizar a -14 LUFS.</p>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:4px;">1. Diagnóstico del Entorno &amp; Filtros FFmpeg</div>
+            <code class="cli">python3 gta6_faceless_pipeline.py --check</code>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--cyan);margin-bottom:4px;">2. Master Largo 16:9 (Micro-Zoom + Ducking -22dB + -14 LUFS)</div>
+            <code class="cli">python3 gta6_faceless_pipeline.py master-16x9 --gameplay raw_vicecity.mp4 --voice locucion_elevenlabs.mp3 --bgm bgm_sin_copyright.mp3 --output master_yt_16x9.mp4</code>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--magenta);margin-bottom:4px;">3. Render Vertical 9:16 TikTok CRP (&gt;62s + Barra Progreso + Zona Subtítulos)</div>
+            <code class="cli">python3 gta6_faceless_pipeline.py render-crp-9x16 --gameplay raw_bridge_exp.mp4 --voice short_65s_es.mp3 --output tiktok_crp_9x16.mp4</code>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--emerald);margin-bottom:4px;">4. Solo Sanear Audio (Sidechain Ducking rápido sin re-codificar video)</div>
+            <code class="cli">python3 gta6_faceless_pipeline.py sanitize-audio --gameplay raw.mp4 --voice voz.mp3 --output audio_clean.mp4</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // 1. Live Countdowns
+  function updateCountdowns() {
+    const now = new Date();
+    const launch = new Date("2026-11-19T00:00:00-06:00");
+    const ypp = new Date("2027-02-01T00:00:00Z");
+
+    const launchDiff = launch - now;
+    const launchEl = document.getElementById("launchCountdown");
+    if (launchDiff <= 0) {
+      const hoursLive = Math.floor(Math.abs(launchDiff) / 3600000);
+      launchEl.textContent = `EN VIVO (+${hoursLive}h post-launch)`;
+      launchEl.style.color = "var(--emerald)";
+    } else {
+      const h = Math.floor(launchDiff / 3600000);
+      const m = Math.floor((launchDiff % 3600000) / 60000);
+      const s = Math.floor((launchDiff % 60000) / 1000);
+      launchEl.textContent = `T-${h}h ${String(m).padStart(2,"0")}m ${String(s).padStart(2,"0")}s`;
+    }
+
+    const yppDiff = ypp - now;
+    const yppEl = document.getElementById("yppCountdown");
+    if (yppDiff > 0) {
+      const d = Math.floor(yppDiff / 86400000);
+      const h = Math.floor((yppDiff % 86400000) / 3600000);
+      yppEl.textContent = `${d} días, ${h} hrs`;
+    } else {
+      yppEl.textContent = "VENTANA CERRADA (8,000h)";
+      yppEl.style.color = "var(--crimson)";
+    }
+  }
+  setInterval(updateCountdowns, 1000);
+  updateCountdowns();
+
+  // 2. Tab switching
+  function switchTab(id, btn) {
+    document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    document.getElementById("tab-" + id).classList.add("active");
+    btn.classList.add("active");
+  }
+
+  // 3. Multi-Layer Revenue Calculator
+  function fmt(n) { return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  function recalc() {
+    const usViews = +document.getElementById("usViews").value;
+    const mxViews = +document.getElementById("mxViews").value;
+    const crpViews = +document.getElementById("crpViews").value;
+    const ssdSales = +document.getElementById("ssdSales").value;
+    const mapSales = +document.getElementById("mapSales").value;
+    const whopViews = +document.getElementById("whopViews").value;
+    const hasW8 = document.getElementById("w8ben").checked;
+
+    document.getElementById("lblUsViews").textContent = usViews.toLocaleString("en-US");
+    document.getElementById("lblMxViews").textContent = mxViews.toLocaleString("en-US");
+    document.getElementById("lblCrpViews").textContent = crpViews.toLocaleString("en-US");
+    document.getElementById("lblSsdSales").textContent = ssdSales + " ventas";
+    document.getElementById("lblMapSales").textContent = mapSales + " ventas";
+    document.getElementById("lblWhopViews").textContent = whopViews.toLocaleString("en-US");
+
+    const usGross = (usViews / 1000) * 3.55;
+    const taxRate = hasW8 ? 0.10 : 0.30;
+    const usNet = usGross * (1 - taxRate);
+    const taxSaved = usGross * 0.20;
+
+    const mxNet = (mxViews / 1000) * 0.65;
+    const crpNet = (crpViews / 1000) * 0.45;
+    const ssdNet = ssdSales * 140 * 0.05;
+    const mapNet = mapSales * 6.99 * 0.92;
+    const whopNet = (whopViews / 1000) * 1.50;
+
+    const totalUsd = usNet + mxNet + crpNet + ssdNet + mapNet + whopNet;
+    const totalMxn = totalUsd * 20.0;
+
+    document.getElementById("outUs").textContent = fmt(usNet);
+    document.getElementById("outMx").textContent = fmt(mxNet);
+    document.getElementById("outCrp").textContent = fmt(crpNet);
+    document.getElementById("outSsd").textContent = fmt(ssdNet);
+    document.getElementById("outMap").textContent = fmt(mapNet);
+    document.getElementById("outWhop").textContent = fmt(whopNet);
+    document.getElementById("totalUsd").textContent = fmt(totalUsd) + " USD";
+    document.getElementById("totalMxn").textContent = "≈ $" + Math.round(totalMxn).toLocaleString("en-US") + " MXN (Ref: 20.00 MXN/USD)";
+    document.getElementById("w8Savings").textContent = hasW8
+      ? `W-8BEN activo: ahorras ${fmt(taxSaved)} USD en retenciones de EE.UU. (10% vs 30%)`
+      : `Sin W-8BEN: estás perdiendo ${fmt(taxSaved)} USD extra por retención automática del 30%`;
+    document.getElementById("w8Savings").style.color = hasW8 ? "var(--emerald)" : "var(--crimson)";
+  }
+  recalc();
+
+  // 4. Sub-niches Selector
+  const NICHES = [
+    {
+      name: "1. Mythbusters, Física e IA de NPCs",
+      rpmUs: "$2.20 – $4.20 USD",
+      rpmMx: "$0.40 – $0.95 USD",
+      risk: "Muy Bajo (100% Transformativo)",
+      format: "10–12 min (16:9) + Shorts 64s",
+      angle: "Poner a prueba el comportamiento real de NPCs, policía, caimanes y tráfico en Leonida sin spoilers de la trama. Retención natural >65% ideal para Auto-Dubbing EN/ES/PT-BR."
+    },
+    {
+      name: "2. Economía Oculta, Rutas Día 1 & Secretos",
+      rpmUs: "$2.80 – $4.80 USD",
+      rpmMx: "$0.50 – $1.20 USD",
+      risk: "Muy Bajo (Cero Spoilers)",
+      format: "8–12 min + Shorts CRP Search Value (66s)",
+      angle: "Responde búsquedas urgentes del jugador: cómo hacer $50,000 en la Hora 1 en Port Gellhorn, coches gratis y armas ocultas. Empuja directo el infoproducto Mapa Tracker ($6.99)."
+    },
+    {
+      name: "3. Documentales Noir: Lore & Miami vs. Vice City",
+      rpmUs: "$4.00 – $7.50 USD",
+      rpmMx: "$0.80 – $1.80 USD",
+      risk: "Bajo (Si evitas cinemáticas crudas)",
+      format: "12–18 min (4 Mid-Rolls) + Spotify Video Podcast",
+      angle: "Estilo Magnates Media / Moon explorando la historia real de Florida detrás de Grassrivers, crímenes históricos y comparativas arquitectónicas. Audiencia adulta +25 con alto poder adquisitivo."
+    },
+    {
+      name: "4. Tech & Hardware: La Crisis de los 212 GB",
+      rpmUs: "$5.00 – $9.50 USD",
+      rpmMx: "$1.20 – $2.80 USD",
+      risk: "Nulo (Categoría Tech/Hardware)",
+      format: "8–10 min + Short CRP 65s",
+      angle: "Capitaliza el problema real del peso (212 GB) y rendimiento PS5 Base vs PS5 Pro vs Xbox Series S. Conecta comisiones altas de SSD NVMe M.2 Gen4, tarjetas Xbox, monitores 4K y capturadoras."
+    },
+    {
+      name: "5. Caballo de Troya: Ciberseguridad 'GTA 6 PC Scam'",
+      rpmUs: "$8.00 – $15.00+ USD (CPM $10–$25)",
+      rpmMx: "$1.50 – $3.50 USD",
+      risk: "Cero Riesgo Take-Two",
+      format: "8–10 min + Short 67s -> Puente a CYBERSECURITY_MTY",
+      angle: "GTA 6 sale solo en PS5/Xbox. Millones buscan 'descargar GTA 6 PC gratis' y descargan infostealers (Lumma/RedLine). Capturas tráfico viral de GTA 6 pero cobras CPM de Ciberseguridad y VPNs."
+    }
+  ];
+
+  function selectNiche(idx, btn) {
+    document.querySelectorAll(".niche-btn").forEach(b => b.classList.remove("active"));
+    if (btn) btn.classList.add("active");
+    const n = NICHES[idx];
+    document.getElementById("nicheDetail").innerHTML = `
+      <div class="grid-3" style="margin-bottom:14px;">
+        <div class="metric-box"><div class="lbl">RPM Estimado EE.UU.</div><div class="num">${n.rpmUs}</div></div>
+        <div class="metric-box"><div class="lbl">RPM Estimado MX / LATAM</div><div class="num" style="color:var(--amber);">${n.rpmMx}</div></div>
+        <div class="metric-box"><div class="lbl">Riesgo Strike / Content ID</div><div class="num" style="color:var(--emerald);font-size:14px;">${n.risk}</div></div>
+      </div>
+      <div class="metric-box">
+        <div class="lbl">Formato Óptimo: ${n.format}</div>
+        <p style="font-size:13.5px;margin-top:6px;color:#E2E8F0;">${n.angle}</p>
+      </div>
+    `;
+  }
+  selectNiche(0);
+
+  // 5. One-Click Scripts
+  const SCRIPTS = [
+    {
+      title: "🎬 Hook Largo #1 (ES) — Experimento IA 24h",
+      tag: "YouTube 11m · ES",
+      text: `Todo el mundo está corriendo las misiones de la historia de GTA 6 hoy, pero nadie está probando si la inteligencia artificial de Vice City realmente piensa... o si es puro maquillaje de tráiler. Durante 24 horas seguidas sometí al mapa de Leonida a 10 pruebas extremas sin arruinarte ni un segundo de la historia. Y lo que pasó en la prueba número siete con la policía y las cámaras de tráfico cambia por completo cómo vas a jugar este juego.`
+    },
+    {
+      title: "🇺🇸 Hook Largo #1 (EN) — Auto-Dubbing Tier 1",
+      tag: "YouTube 11m · EN",
+      text: `Everyone is rushing through GTA 6's story missions today, but nobody is testing whether Vice City's AI actually thinks... or if it's just trailer smoke and mirrors. For 24 hours straight, I put Leonida's engine through 10 extreme stress tests without spoiling a single second of the plot. And what happened in test number seven with traffic cameras and police flanking completely changes how you need to play this game.`
+    },
+    {
+      title: "🛡️ Hook Largo #2 — Estafa 'GTA 6 PC' (Alto CPM)",
+      tag: "Puente Cyber · 9m",
+      text: `Al chile y directo al grano: si hoy alguien te mandó un link para descargar "GTA 6 para PC" o una "APK para Android", no te están regalando el juego... te están metiendo un infostealer para vaciarte la cuenta del banco, robar tus sesiones de Google y secuestrar tu Steam o tu Discord en menos de 40 segundos. GTA 6 salió exclusivamente en PlayStation 5 y Xbox Series X|S. No existe versión de PC hoy. Punto.`
+    },
+    {
+      title: "📱 Short CRP #1 (65s) — Error 212 GB + Secreto Día 1",
+      tag: "TikTok CRP >60s",
+      text: `[TEXTO: EL ERROR QUE BLOQUEA CONSOLAS HOY]\nSi tu consola no te deja instalar GTA 6 hoy, no borres tus juegos antes de escuchar esto.\nGTA 6 pesa exactamente 212 gigabytes con su parche de lanzamiento. Eso destruye prácticamente la mitad de una PS5 estándar y más del 60% de una Xbox Series S. Ojo: si conectas un disco duro USB mecánico viejo, el juego NO arranca desde ahí. Necesitas almacenamiento interno NVMe PCIe 4.0 de mínimo 5,500 MB/s con disipador térmico, o la tarjeta oficial para Xbox. Te dejé los dos modelos compatibles en el enlace del perfil.\nAhora bien, apenas entres a Vice City hoy, dirígete al muelle sur de carga industrial al este del aeropuerto: sin activar ni un spoiler, ahí aparecen un vehículo todo terreno rápido y un punto de arranque limpio para sacar equipo en tu primera hora. Guarda este video y comenta LEONIDA.`
+    },
+    {
+      title: "📱 Short CRP #2 (64s) — Puente de los Cayos (IA)",
+      tag: "TikTok CRP >60s",
+      text: `[TEXTO: ROMPIENDO EL MOTOR DE IA DE GTA 6]\nEsto es lo que pasa cuando bloqueas el único puente hacia los Cayos en GTA 6 durante cinco minutos reales.\nEn cualquier otro juego, los autos se quedarían atorados tocando el claxon como robots. En Leonida, al segundo 18 los NPCs entienden que la vía está bloqueada por un vehículo pesado. El primer conductor saca su teléfono, graba la escena y llama a emergencias. Detrás de él, dos camionetas dan vuelta en U invadiendo el carril contrario.\nPero lo más absurdo pasa al minuto tres: cuando la fila llega al cruce anterior, la policía deja de intentar pasar por el tráfico y envía lanchas marítimas por debajo del puente mientras desvía unidades antes del acceso. La IA ya no aparece mágicamente detrás de ti. Tienes las 10 pruebas completas en YouTube.`
+    },
+    {
+      title: "📱 Short CRP #3 (66s) — Ruta $50,000 Port Gellhorn",
+      tag: "Search Value CRP",
+      text: `[TEXTO: NO HAGAS MISIONES ANTES DE ESTO]\nAsí puedes sacar tus primeros cincuenta mil dólares en la primera hora de GTA 6 sin usar glitches ni arruinarte la historia.\nLa mayoría comete el error de gastar su dinero inicial en Vice City donde todo cuesta el doble y la policía llega en diez segundos. En lugar de eso, vete directo al oeste rumbo a Port Gellhorn entre la una y las cuatro de la madrugada del juego. A esa hora la densidad de patrullas cae drásticamente.\nPrimero pasa por los depósitos traseros del corredor logístico para llevarte un coupé de tracción trasera. Segundo, concéntrate en entregas rápidas fuera de la avenida principal sin entrar en tiroteos largos que dañen el vehículo. En tres recorridos de diez minutos tienes cincuenta mil limpios. El mapa interactivo completo está en mi perfil.`
+    }
+  ];
+
+  const grid = document.getElementById("scriptsGrid");
+  SCRIPTS.forEach((s, idx) => {
+    const div = document.createElement("div");
+    div.className = "script-card";
+    div.innerHTML = `
+      <div class="script-head">
+        <div>
+          <span class="badge badge-cyan" style="margin-bottom:4px;">${s.tag}</span>
+          <div class="script-title">${s.title}</div>
+        </div>
+        <button class="copy-btn" onclick="copyScript(${idx}, this)">Copiar Guion</button>
+      </div>
+      <pre class="script-body" id="scriptText-${idx}">${s.text}</pre>
+    `;
+    grid.appendChild(div);
+  });
+
+  function copyScript(idx, btn) {
+    navigator.clipboard.writeText(SCRIPTS[idx].text).then(() => {
+      btn.textContent = "✓ Copiado";
+      btn.classList.add("copied");
+      setTimeout(() => { btn.textContent = "Copiar Guion"; btn.classList.remove("copied"); }, 1800);
+    });
+  }
+
+  // 6. Interactive Pre-Upload Checklist
+  const CHECKS = [
+    { id: "c1", title: "Radio in-game en 0% (Cero música licenciada)", desc: "Evita reclamos de Content ID de disqueras en Vice City que roban el 100% del AdSense." },
+    { id: "c2", title: "Cero metraje pre-lanzamiento ni cinemáticas puras", desc: "Solo gameplay posterior al desbloqueo oficial y sin compilar finales ni shows de TV internos." },
+    { id: "c3", title: "Cortes visuales cada 3–4 segundos + HUD / Zoom", desc: "Blindaje obligatorio contra la política de YouTube Inauthentic Content (Julio 2025–2026)." },
+    { id: "c4", title: "Audio masterizado a -14 LUFS y ducking -22 dB", desc: "Procesado con gta6_faceless_pipeline.py + voz expresiva ElevenLabs (jamás TTS plano)." },
+    { id: "c5", title: "Short TikTok CRP >= 62 segundos (Cuenta Personal)", desc: "Clips menores a 60s pagan $0 en Creator Rewards Program; incluir keywords de búsqueda en subtítulos." },
+    { id: "c6", title: "Subida inicial en YouTube Studio como OCULTO (45 min)", desc: "Verificar 0 reclamos de copyright y activar Playlist + Pantalla Final (Sin Test A/B en canal nuevo)." },
+    { id: "c7", title: "Enlaces de afiliado (SSD 2TB / Xbox) + Mapa $6.99 fijados", desc: "Monetización activa desde el minuto 0 sin depender del PIN ni aprobación de AdSense." }
+  ];
+
+  const storageKey = "gta6_war_room_checks_v1";
+  let savedChecks = {};
+  try { savedChecks = JSON.parse(localStorage.getItem(storageKey) || "{}"); } catch(e) {}
+
+  function renderChecklist() {
+    const container = document.getElementById("checklistItems");
+    container.innerHTML = "";
+    let doneCount = 0;
+    CHECKS.forEach(item => {
+      const isDone = !!savedChecks[item.id];
+      if (isDone) doneCount++;
+      const label = document.createElement("label");
+      label.className = "check-item" + (isDone ? " done" : "");
+      label.innerHTML = `
+        <input type="checkbox" ${isDone ? "checked" : ""} onchange="toggleCheck('${item.id}')">
+        <div class="check-text"><strong>${item.title}</strong><span>${item.desc}</span></div>
+      `;
+      container.appendChild(label);
+    });
+    const pct = Math.round((doneCount / CHECKS.length) * 100);
+    document.getElementById("checkScore").textContent = `${pct}% (${doneCount}/${CHECKS.length})`;
+    document.getElementById("progressBar").style.width = pct + "%";
+  }
+
+  function toggleCheck(id) {
+    savedChecks[id] = !savedChecks[id];
+    try { localStorage.setItem(storageKey, JSON.stringify(savedChecks)); } catch(e) {}
+    renderChecklist();
+  }
+  renderChecklist();
+</script>
+</body>
+</html>
