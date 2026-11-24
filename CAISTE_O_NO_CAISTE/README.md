@@ -32,14 +32,14 @@ Ser el canal de referencia en español para aprender a detectar trampas digitale
 
 - 3D low-poly / voxel, personajes cúbicos tipo bloque, como Minecraft / Lego pero suave.
 - Colores pastel brillantes, texturas mate, iluminación cálida de estudio.
-- NO es neón. No poner neón en el prompt.
 - Referencia: reel @vibecoder_es Df2dda9ievY.
 - Prompt base: 3D low-poly, voxel, blocky cute character, pastel bright colors, soft matte textures, warm studio lighting.
 - Ruta: siempre para arriba, como Duolingo pero al revés. Duolingo baja, aquí se asciende.
+- El caminito son unos rieles, como de tren. Los rieles son los guardrails. La inteligencia artificial va desbocada, sin camino, y alguien le pone los rieles y ya agarra un camino.
 
 ## Personajes — monitos IA en 3D, hechos con Hyper Frames
 
-- Personaje que resuelve: el Jugador, el que camina la ruta y contesta. Pendiente definir si es avatar de Chuy, Guardrails o uno nuevo.
+- Guardrails, el Guía: el personaje que lleva los guardrails. Camina por los rieles, se pone su arnés de seguridad y le pone los rieles a la IA. Es el que resuelve las preguntas contigo. En una escena se pone el arnés para explicar qué es un arnés, y luego explica qué es un guardrail.
 - Nivel Fácil: ChatGPT. Amigable, claro, de todos los días. 5 segundos para pensar. Escenario: casa, calle, celular.
 - Nivel Medio: Claude. Cuidadoso, atento al detalle. 10 segundos para pensar. Escenario: oficina, banco, trabajo.
 - Nivel Difícil: Grok. El que te va a hackear, juega a la mala, rebelde. 15 segundos para pensar. Escenario: oscuro, centro de datos, cima.

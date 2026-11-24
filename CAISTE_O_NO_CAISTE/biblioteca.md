@@ -1,35 +1,39 @@
 # Biblioteca — ¿Caíste o no caíste?
 
-Estilo visual: 3D low-poly / voxel, personajes cúbicos tipo bloque, colores pastel brillantes, texturas mate, iluminación cálida. NO es neón, no poner neón en el prompt.
+Estilo visual: 3D low-poly / voxel, personajes cúbicos tipo bloque, colores pastel brillantes, texturas mate, iluminación cálida.
 Referencia: reel @vibecoder_es Df2dda9ievY.
 Ruta: siempre para arriba, siempre ascendiendo. Semper Ascendens, Nuevo León.
+El caminito son unos rieles, como de tren. Los rieles son los guardrails.
 Prompt base para monitos: 3D low-poly, voxel, blocky cute character, pastel bright colors, soft matte textures, warm studio lighting.
 
 ## 1. Personajes
 
-### Personaje que resuelve las preguntas — El Jugador
-- Quién es: tú, el que camina la ruta y contesta. Es el protagonista.
-- Look: figura 3D cúbica, como los monitos de referencia. Camina hacia arriba por la ruta.
-- Rol: decide si es real o es trampa antes del contador. Si acierta, sube un escalón. Si cae, Guardrails lo ataja y le explica.
-- Pendiente por definir con Chuy: ¿es tu avatar 3D, es Guardrails, o es un personaje nuevo?
+### Guardrails, el Guía — el que lleva los guardrails
+- Quién es: el protagonista. Camina por los rieles y contesta contigo.
+- Look: figura 3D cúbica, con arnés de seguridad. Se pone el arnés para explicar qué es un arnés, y luego explica qué es un guardrail.
+- Rol: decide si es real o es trampa antes del contador. Si acierta, sube un escalón por los rieles. Si cae, él lo ataja. Cuando la IA va desbocada, sin camino, él le pone los rieles y la IA ya agarra un camino.
+- Versiones: Versión A con casco y arnés amarillo, Versión B con chaleco y arnés azul, Versión C con capa y arnés rojo.
 
 ### Personaje Nivel 1 — ChatGPT, Fácil
 - Rol: el que hace las preguntas fáciles. Amigable, claro, de todos los días.
 - Tiempo para pensar: 5 segundos.
 - Color: verde / blanco, pastel brillante.
 - Escenario: casa, calle, celular.
+- Versiones: Versión A cubo verde sonriente, Versión B monito con lentes, Versión C monito con gorra.
 
 ### Personaje Nivel 2 — Claude, Medio
 - Rol: el que hace las preguntas medias. Cuidadoso, atento al detalle.
 - Tiempo para pensar: 10 segundos.
 - Color: naranja, como el cubo naranja del video de referencia.
 - Escenario: oficina, banco, trabajo.
+- Versiones: Versión A cubo naranja con carita, Versión B monito con corbata, Versión C monito con libreta.
 
 ### Personaje Nivel 3 — Grok, Difícil
 - Rol: el que hace las preguntas difíciles. Es el que te va a hackear, juega a la mala, rebelde.
 - Tiempo para pensar: 15 segundos.
 - Color: negro / morado oscuro, con acento brillante.
 - Escenario: oscuro, centro de datos, cima.
+- Versiones: Versión A cubo negro con lentes oscuros, Versión B monito hacker con capucha, Versión C monito con sonrisa traviesa.
 
 ## 2. Escenarios
 
@@ -37,7 +41,8 @@ Prompt base para monitos: 3D low-poly, voxel, blocky cute character, pastel brig
 - Nivel Medio: oficina, banco, trabajo, ciudad. Luz neutra.
 - Nivel Difícil: oscuro, centro de datos, noche, cima. Luz baja, con contraste.
 
-Ruta completa: empiezas abajo con ChatGPT, subes con Claude, llegas arriba con Grok. Cada pregunta bien contestada es un escalón para arriba.
+Ruta completa: empiezas abajo con ChatGPT, subes con Claude, llegas arriba con Grok. Cada pregunta bien contestada es un escalón para arriba, por los rieles.
+Escena clave: la IA va desbocada, sin camino, y Guardrails le pone los rieles y la IA ya agarra un camino. Otra escena clave: Guardrails se pone el arnés para explicar qué es un arnés, y luego explica qué es un guardrail.
 
 ## 3. Textos de los contadores
 
@@ -100,9 +105,8 @@ Guiones completos con caso, pistas y guardrail en: caiste-o-no-caiste-guiones.md
 
 ## 6. Pendientes de la biblioteca
 
-- Definir quién es el personaje que resuelve: ¿tu avatar, Guardrails, o uno nuevo?
-- Generar imagen 3D de cada monito: ChatGPT, Claude, Grok
+- Generar imagen 3D de cada monito: Guardrails, ChatGPT, Claude, Grok
 - Generar imagen 3D de cada escenario: casa/calle, oficina/banco, oscuro/cima
-- Generar imagen de la ruta ascendente completa
+- Generar imagen de la ruta ascendente completa, con rieles de tren
 
-Estado: borrador para aprobación de Chuy. Nada publicado.
+Estado: personajes definidos. Nada publicado.
