@@ -110,3 +110,67 @@ Guiones completos con caso, pistas y guardrail en: caiste-o-no-caiste-guiones.md
 - Generar imagen de la ruta ascendente completa, con rieles de tren
 
 Estado: personajes definidos. Nada publicado.
+
+## 7. Trampa de tiempo (mecánica nueva, definida por Chuy el 24 nov 2026)
+
+Idea de Chuy, en sus palabras: algunas preguntas llevan una trampita de tiempo. Se anuncia un tiempo, pero el tiempo real es menor, y el contador se corta antes de tiempo. La gente dice "no mames, se cortó antes de tiempo", le regresa al video y lo vuelve a ver. La trampa es solo del temporizador, nunca de la respuesta: el caso, las pistas y el guardrail siempre son reales y correctos.
+
+### Cómo se hace en pantalla
+- La voz dice el tiempo anunciado ("Tienes 10 segundos") y el contador grande en pantalla empieza en ese número.
+- El contador baja normal, pero la revelación entra antes de llegar a cero: el número se corta a la mitad de la cuenta y salta directo a la revelación.
+- En el corte, Guardrails reacciona (se encoge de hombros, sonríe, se pone el arnés) pero no explica nada todavía. La explicación llega en el siguiente video, no en este.
+- En los Shorts de la pregunta trampa, el corte se nota igual: el Short termina en la revelación, sin aviso.
+
+### Variantes de trampa
+- Trampa suave: se quita medio segundo. Anunciado 8 seg, real 7.5 seg. Anunciado 10 seg, real 9.5 seg.
+- Trampa media: se quita un segundo completo. Anunciado 8 seg, real 7 seg. Anunciado 10 seg, real 9 seg.
+- Trampa fuerte: se anuncia 10 seg y el real es 7 seg; se anuncia 8 seg y el real es 5 seg.
+- Trampa Grok (solo nivel Difícil, Grok juega a la mala): se anuncia 10 seg y el real es 5 seg.
+
+### Reglas
+- Máximo 2 preguntas trampa por video, y nunca seguidas.
+- Nunca en la pregunta 1: la primera pregunta siempre es limpia, para que la gente confíe en el juego.
+- Las preguntas trampa fijas son la 4 y la 9 de cada nivel. Si un video necesita una tercera, la decide Chuy, no se inventa.
+- La trampa se tiene que poder encontrar al volver a ver el video: el contador se ve cortado, no se esconde. Si al regresar no se nota nada, la trampa no sirve.
+- Nunca se miente sobre el guardrail ni sobre si el caso era real o trampa. Solo el reloj miente.
+
+### Ejemplos concretos
+- Pregunta 4, Nivel Fácil, ChatGPT — "Te ganaste un iPhone". Trampa fuerte. Anunciado: 8 segundos. Real: 5 segundos. La voz dice "Tienes 8 segundos", el contador marca 8, 7, 6 y a los 5 segundos reales entra la revelación. El que estaba pensando "es trampa, es trampa" se queda a medias.
+- Pregunta 9, Nivel Fácil, ChatGPT — "Sorteo de Costco, pantalla gratis". Trampa suave. Anunciado: 8 segundos. Real: 7.5 segundos. Casi no se nota la primera vez; al volver a verlo sí se nota que el contador no llegó a cero.
+- Pregunta 4, Nivel Medio, Claude — "Tu reembolso del SAT". Trampa fuerte. Anunciado: 10 segundos. Real: 7 segundos. Claude, cuidadoso, cuenta 10, 9, 8 y a los 7 segundos reales Guardrails corta y revela.
+- Pregunta 9, Nivel Medio, Claude — "Tu licencia de conducir venció". Trampa media. Anunciado: 10 segundos. Real: 9 segundos. Se quita un segundo completo.
+- Pregunta 4, Nivel Difícil, Grok — "Código de verificación que tú no pediste". Trampa media. Anunciado: 10 segundos. Real: 9 segundos.
+- Pregunta 9, Nivel Difícil, Grok — "Link de Zoom para tu entrevista". Trampa Grok. Anunciado: 10 segundos. Real: 5 segundos. Grok juega a la mala y es la trampa más dura del canal: la mitad del tiempo anunciado. Guardrails lo ataja en la revelación.
+
+## 8. Reciclaje y gancho final (mecánica nueva, definida por Chuy el 24 nov 2026)
+
+Idea de Chuy: la trampa de tiempo recicla los videos, porque la gente vuelve a ver el video anterior para buscar la trampita. Cada video siembra una trampa y el siguiente video la revela. Así un video viejo vuelve a tener vistas por el video nuevo.
+
+### El ciclo
+1. Video N: lleva sus preguntas trampa (la 4 y la 9) y cierra con el gancho final. No revela sus trampas.
+2. La audiencia vuelve a ver el video N para encontrar dónde se cortó el contador.
+3. Video N+1: abre revelando la trampita del video anterior y luego siembra sus propias trampas.
+4. Video N+1: cierra con el gancho final, y el ciclo sigue.
+
+### Gancho final (cierre de cada video, palabras de Chuy)
+Guardrails, mirando a cámara, dice:
+"Quédate hasta el final porque te vamos a dejar una cosa que hicimos en el video pasado que no te hemos dicho. Ten cuidado, porque es tu propia seguridad la que está en juego. Tú sabes si te quedas o no te quedas."
+
+Notas de producción del gancho:
+- Se dice al final, después del último guardrail, antes del CTA.
+- No se dice cuál fue la trampa ni en qué pregunta. Solo se avisa que hubo una.
+- Tono serio pero cercano, no de miedo: prevención, no susto.
+
+### Apertura del siguiente video (revelación de la trampita)
+Guardrails abre el siguiente video así:
+"En el video anterior pusimos una trampita, ¿caíste o no? Te dijimos que tenías 10 segundos y en realidad te dimos 7. El contador se cortó antes de tiempo. Si le regresaste al video y la encontraste, coméntalo. Y ojo, porque en este video también hay trampita."
+
+Notas de producción de la revelación:
+- Se dice la trampa con números exactos: tiempo anunciado contra tiempo real.
+- Se muestra el pedacito del contador cortado, para que el que volvió a verlo confirme que la encontró.
+- Después de revelar, se juega normal: las trampas del video nuevo no se anuncian.
+
+### Reglas
+- Cada video revela solo las trampas del video anterior, nunca las suyas.
+- El gancho final va en todos los videos largos y en la compilación no se repite por nivel, va una sola vez al final.
+- CTA después del gancho: Comenta CAÍ o NO CAÍ. Comenta GUARDRAILS y te mando la guía. Y ahora también: comenta si encontraste la trampita del video pasado.
